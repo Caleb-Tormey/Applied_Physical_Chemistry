@@ -1,0 +1,128 @@
+% Created with jtex v.1.0.20
+\documentclass[a4paper,11pt,oneside]{book}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{natbib}
+\usepackage{xcolor}
+\usepackage{changepage}
+\usepackage{framed}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\bibliographystyle{abbrvnat}
+
+% Make list items more compact
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=0pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%  imports  %%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}
+\usepackage{booktabs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\hypersetup{
+  colorlinks,
+  linkcolor={black},
+  citecolor={black},
+  urlcolor={black}
+}
+
+% Style quotes
+\definecolor{darkblue}{rgb}{0.0, 0.0, 0.55}
+\definecolor{quoteshade}{rgb}{0.95, 0.95, 1}
+\renewenvironment{quote}{%
+  \def\FrameCommand{%
+    \hspace{1pt}%
+    {\color{darkblue}\vrule width 2pt}%
+    {\color{quoteshade}\vrule width 4pt}%
+    \colorbox{quoteshade}%
+  }%
+  \MakeFramed {\advance\hsize-\width \FrameRestore}%
+  \noindent\hspace{-8pt}% disable indenting first paragraph
+  \begin{adjustwidth}{0pt}{0pt}% adjust as needed
+  \vspace{2pt}\vspace{2pt}%
+}
+{%
+  \vspace{2pt}\end{adjustwidth}\endMakeFramed%
+}
+
+\title{\Huge \textbf{Applied Physical Chemistry}}
+\author{\textsc{Caleb A. Tormey}}
+
+\begin{document}
+\sloppy
+
+\frontmatter
+\maketitle
+
+\tableofcontents
+% \listoffigures
+% \listoftables
+
+\mainmatter
+
+% \include{preface.tex}
+% \include{acknowledgements.tex}
+
+\section{Background and Introduction}
+
+\include{book-book-content.section-01.preface}
+
+\include{book-book-content.section-01.acknowledgments}
+
+\include{book-book-content.section-01.chapter-a.chapter-a}
+
+\include{book-book-content.section-01.chapter-b.chapter-b}
+
+\section{Introduction to Quantum Mechanics and Atomic Structure}
+
+\include{book-book-content.section-02.chapter-01.chapter-01}
+
+\include{book-book-content.section-02.chapter-02.chapter-02}
+
+\include{book-book-content.section-02.chapter-03.chapter-03}
+
+\section{Chemical Bonding and Molecular Structure}
+
+\include{book-book-content.section-03.chapter-04.chapter-04}
+
+\include{book-book-content.section-03.chapter-05.chapter-05}
+
+\include{book-book-content.section-03.chapter-06.chapter-06}
+
+\section{Fundamentals of Thermodynamics in Chemical and Biological Systems}
+
+\include{book-book-content.section-04.chapter-07.chapter-07}
+
+\include{book-book-content.section-04.chapter-08.chapter-08}
+
+\include{book-book-content.section-04.chapter-09.chapter-09}
+
+\include{book-book-content.section-04.chapter-10.chapter-10}
+
+\section{Chemical Kinetics and Reaction Mechanisms}
+
+\include{book-book-content.section-05.chapter-11.chapter-11}
+
+\include{book-book-content.section-05.chapter-12.chapter-12}
+
+\include{book-book-content.section-05.chapter-13.chapter-13}
+
+\include{book-book-content.section-05.chapter-14.chapter-14}
+
+\section{Solution Chemistry and Electrochemistry}
+
+\include{book-book-content.section-06.chapter-15.chapter-15}
+
+\include{book-book-content.section-06.chapter-16.chapter-16}
+
+
+
+
+
+\end{document}

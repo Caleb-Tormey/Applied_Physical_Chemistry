@@ -1,0 +1,239 @@
+\subsection{Chapter B. Physics Introduciton and Review}
+
+\subsubsection{Terminology, Definitions and Units}
+
+\paragraph{Powers of Ten}
+
+We will be using scientific notation, however, it is often better to use powers of ten to make the numbers more reasonable. To that end there are prefixes that we can use to account for this. They typically come in bundles of 3 powers of 10 (so 1000 or 0.001)
+
+\begin{table}
+\centering
+\caption[]{Powers of Ten Prefixes}
+\label{tbl_prefix}
+\begin{tabular}{p{\dimexpr 0.200\linewidth-2\tabcolsep}p{\dimexpr 0.200\linewidth-2\tabcolsep}p{\dimexpr 0.200\linewidth-2\tabcolsep}p{\dimexpr 0.200\linewidth-2\tabcolsep}p{\dimexpr 0.200\linewidth-2\tabcolsep}}
+\toprule
+Prefix & Exponent & Number & Scientific Notation & Name \\
+\hline
+Giga (G) & 9 & 1,000,000,000 & 10\textsuperscript{9} & billion \\
+Mega (M) & 6 & 1,000,000 & 10\textsuperscript{6} & million \\
+kilo (k) & 3 & 1,000 & 10\textsuperscript{3} & thousand \\
+hecto (h) & 2 & 100 & 10\textsuperscript{2} & hundred \\
+deca (da) & 1 & 10 & 10 & ten \\
+deci (d) & -1 & 0.1 & 10\textsuperscript{-1} & tenth \\
+centi (c) & -2 & 0.01 & 10\textsuperscript{-2} & hundreth \\
+milli (m) & -3 & 0.001 & 10\textsuperscript{-3} & thousandth \\
+micro ($\mu$) & -6 & 0.000001 & 10\textsuperscript{-6} & millionth \\
+nano (n) & -9 & 0.00000001 & 10\textsuperscript{-9} & billionth \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Basie SI Units}
+
+In order to do science in an organized and more easily reproducible way, we need to have standards upon which to compare results or to set up experiments. To that end standardized units are vital to physical science. While there are many systems of units, we will primarily be using SI units (short for Internation System of Units well technically it is short for the French Système International d'unités). Here are the units we will be primarily using.
+
+\begin{table}
+\centering
+\caption[]{Base SI Units}
+\label{tbl_base_units}
+\begin{tabular}{p{\dimexpr 0.333\linewidth-2\tabcolsep}p{\dimexpr 0.333\linewidth-2\tabcolsep}p{\dimexpr 0.333\linewidth-2\tabcolsep}}
+\toprule
+Quantity & Name & Abbreviation \\
+\hline
+Length & Meter & m \\
+Mass & Kilogram & kg \\
+Time & Second & s \\
+Electric Current & Ampere & A \\
+Thermodynamic Temperature & Kelvin & K \\
+Amount of Substance & Mole & mol \\
+Luminous Intensity & Candela & cd \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Derived Units}
+
+We cannot just use the base units as the world has more complicated characteristics. We can therefore combine base units to create derived units. For example, we use meter, m, as the unit of length. If we would like to describe an area we would multiply the length ($l$) times the width ($w$). The length and the width both have units of meters. So when we multiply them together we get meters times meters which should be a unit of area as shown below,
+
+\begin{equation*}
+l(m) \times w(m) = lw(m^2)= a (m^2)
+\end{equation*}
+
+We can also mix unit types for other derived units. For example, we could find the density of water by finding the mass that occupies a certain volume. What we would find is that $1\:g$ of water would occupy $1\:mL$
+Look in Table~\ref{tbl_derived_units} for some of the derived units we will be using.
+
+\begin{table}
+\centering
+\caption[]{Examples of Derived SI Units}
+\label{tbl_derived_units}
+\begin{tabular}{p{\dimexpr 0.250\linewidth-2\tabcolsep}p{\dimexpr 0.250\linewidth-2\tabcolsep}p{\dimexpr 0.250\linewidth-2\tabcolsep}p{\dimexpr 0.250\linewidth-2\tabcolsep}}
+\toprule
+Quantity & Unit Name & Symbol & Expression in Base Units \\
+\hline
+Frequency & Hertz & Hz & s\textsuperscript{-}\textsuperscript{1} \\
+Force & Newton & N & kg\textsuperscript{.}m/s\textsuperscript{2} \\
+Pressure & Pascal & Pa & N/m\textsuperscript{2} or kg/(m\textsuperscript{.}s\textsuperscript{2}) \\
+Energy, Work, Heat & Joule & J & N\textsuperscript{.}m or kg\textsuperscript{.}m\textsuperscript{2}/s\textsuperscript{2} \\
+Power & Watt & W & J/s or kg\textsuperscript{.}m\textsuperscript{2}/s\textsuperscript{3} \\
+Electric Charge & Coulomb & C & A\textsuperscript{.}s \\
+Electric Potential & Volt & V & J/C \\
+Electric Resistance & Ohm & $\Omega$ & V/A \\
+Capacitance & Farad & F & C/V \\
+Magnetic Flux Density & Tesla & T & N/(A\textsuperscript{.}m) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Unit Conversion}
+
+It will often be required to convert from one set of units to another based on experimental procedures or previous studies. It is vital you be able to confidently change units, and especially derived units, accurately. The key to making the conversions is to pay attention to whether the unit is in the numerator or denominator. Most errors come from converting with inverted relationships. Key to doing this correctly is writing out \textbf{ALL} units and not taking shortcuts. Let's show a couple of examples.
+
+we will start with a straight forward one where we will convert $1.23\:m$ to kilometers,
+
+\begin{align}
+1.23\:m =\:?\:km\\
+\text{Use the fact that}\: 1000\:m = 1\:km\\
+1.23\:m\times \frac{1\:km}{1000\:m}\\
+1.23\:\cancel{m}\times \frac{1\:km}{1000\:\cancel{m}}\\
+\frac{1.23\:km}{1000}=0.00123\:km=\boxed{1.23\times 10^{-3}\:km}
+\end{align}
+
+We can do a trickier one if we look at derived units and units with exponents. Let's next convert $4.56\:kg\:L^{ -1}$ to units of grams per cubic meter ($g\:m^{ -3}$). To do this let's first write out some of the conversion ratios that might be helpful. $1\:kg = 1000\:g$, $1\:L = 1\:dm^3$, and $1\:dm = 0.1\:m$.
+
+Lastly let's look at using and converting to non-SI units (typically imperial units). You may see some familiar or unfamiliar unit comparisons that may be necessary. For example, there are $2.54\:cm$ per $1\:in$. There are also $12\:inch$ per $1\:ft$ and $5280\:ft$ per $1\:mi$. Using these facts let's convert $1\:km$ to miles.
+
+\paragraph{Coordinate Systems}
+
+Coordinate systems are used to help define a system in space. By creating a coordinate system every point in the space can be uniquely identified. If we want to determine thing like speed, or concentration we need some notion as
+
+\subparagraph{Cartesian}
+
+This is the coordinate system you are most familiar with using. The
+
+We can find the distance between these points using...
+
+\subparagraph{Spherical}
+
+Sometimes the mathematics is easier if you change the coordinate system. For
+
+\subparagraph{Cylindrical}
+
+\subsubsection{Newton's Laws}
+
+For our review we will just worry about the basics of Newton's Laws. These have been a very successful model and are good at explaining many physical phenomena. We will find later in this text that for some problems we will require the use of a new type of theory (Spoiler Quantum Theory). We will review Newton's laws but I will also give for you some information about why these laws are important for you to internalize and how they come up in every chemical system one way or another.
+
+Newton's Three Laws
+
+\begin{itemize}
+\item The first law is the law of inertia. An object will remain at rest or in uniform, straight-line motion unless acted upon by and external force.\begin{itemize}
+\item In general chemistry we learn about the Kinetic Molecular Theory of Gases (KMT), which models gas particles traveling in straight lines until they encounter either the wall or another gas particle.
+\item We will also find that additional and small attractive forces of real gases will require us to modify the ideal gas law due to the change in momentum of the gas particles.
+\end{itemize}
+
+
+\item The second law is the law that defines the force. The force ($F$) acting on an object is equal to its mass ($m$) times its acceleration ($a$). You can think of it also being the rate of change of the momentum ($p$) also (and in some ways maybe more fundamental).\begin{itemize}
+\item $F = ma$ and $F = \frac{dp}{dt}$
+\item When looking at the origin of pressure what we are finding is the force exerted by the gas particle as it collides with the wall.
+\item Another way we can determine the force is by analyzing the potential energy. Interestingly the force of the system is related to how the potential changes with distance and is defined as $V\left(r\right) = -\frac{d V\left(r\right)}{dr}$.
+\item A very relevant example for studying chemistry is that the behavior of bonded atoms for small displacements will mimic the behavior of two masses connected by a spring.
+\end{itemize}
+
+
+\item The third law is the action-reaction law. For every action, there is an equal and opposite reaction.\begin{itemize}
+\item Again with two collisions of gas molecules we will conserve the momentum in the closed system (and energy if it is an elastic collision) due to the equal and opposite forces.
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Vectors}
+
+It isn't just enough to say something is moving at a certain rate, we must also talk about in what direction. Given a coordinate system we can define things like velocity and acceleration based on these principles. This is the point of a vector. It not only has a value it contains in it information about the direction it is going.
+
+The magnitude of the vector is given by the length of the vector.
+
+\textbf{You will notice the magnitude of the vector equation is similar to how we found distances between two points. How are they related?}
+
+\subsubsection{Energy}
+
+We define energy as what is required to do work. Well now we need to know what work is. Work is applying a force over a distance. The most obvious example would be lifting an object. If you have an object on the ground
+
+\paragraph{Kinetic}
+
+This is the energy of motion. The most basic definition is
+
+\begin{equation}
+\label{kinetic_energy}
+KE = \frac{1}{2}mv^2
+\end{equation}
+
+It can also be defined by the momentum ($p = m v$) in equation (\ref{kinetic_energy_momentum})
+\begin{equation}
+\label{kinetic_energy_momentum}
+KE = \frac{p^2}{2m}
+\end{equation}
+\paragraph{Potential}
+
+\subparagraph{Electromagnetism}
+
+This topic is incredibly deep. We will however, just take a brief look at properties of electric charges and magnetic fields. The first is that like charges repel, and unalike charges attract. We can actually see this if we look at the governing potential energy equation known as Coulomb's law shown in equation (\ref{coulomb_pot}).
+
+\begin{equation}
+\label{coulomb_pot}
+V\left(r\right) = \frac{q_1q_2}{4\pi\epsilon_0 r}
+\end{equation}
+
+\begin{equation}
+\label{coulomb_force}
+F\left(r\right) = \frac{q_1q_2}{4\pi\epsilon_0 r^2}
+\end{equation}
+\subsubsection{Momentum}\label{linear_angular_momentum}
+
+\paragraph{Linear}
+
+We discussed this earlier where momentum is defined in equation (\ref{linear_momentum})
+\begin{equation}
+\label{linear_momentum}
+p =mv
+\end{equation}
+\paragraph{Angular}
+
+The moment of inertia $I$ plainly speaking is how difficult it is to start spinning something or how hard it is to slow/stop it from spinning. So a little object with not much mass is easy to stop whereas a large object with a big radius is more difficult.
+
+\begin{equation}
+\label{moment_of_inertia}
+I = mr^2
+\end{equation}
+
+\paragraph{Torque}
+
+Just as we need to apply a force to change linear momentum. We must apply a torque to change angular momentum.
+
+\begin{framed}
+\textbf{Note}\\
+\textit{\textbf{Conceptual Question:}} In the moment of inertia question, does changing the mass or changing the radius have a greater impact on the moment of inertia? Explain your reasoning.
+\end{framed}
+
+\subsubsection{Conservation Laws}
+
+\subsubsection{Practice Problems}
+
+You are free to do none, some or all these problems as you see fit. They would be very helpful to use in studying for the chapter exams.
+
+\begin{itemize}
+\item Do the following unit conversions\begin{itemize}
+\item $6.23\:m\:s^{ -1}$ to $nm\:hr^{ -1}$
+\item $7.85\times 10^{12}\:\mu m^3$ to $ft^3$
+\item $5.93\times 10^3\:s^{ -1}$ to $min^{ -1}$
+\end{itemize}
+
+
+\item What force is required to accelerate a mass of $12.345\:g$ is by $35.7\:m\:s^{ -2}$ in Newtons?
+\item A mass off $2.3\:g$ is raised to a height of $31.00\:m$. What is the maximum kinetic energy it can achieve?
+\item Give the distance between the following pairs of points\begin{itemize}
+\item $\text{A} = \left( -5.6\right)$ and $\text{B} = \left( -7.7\right)$
+\item $\text{A} = \left (1.4,2.0\right)$ and $\text{B} = \left( -2.5,7.2\right)$
+\item $\text{A} = \left (5.4, -8.1, -9.3\right)$ and $\text{B} = \left(12.0,27.2,0.4\right)$
+\end{itemize}
+
+
+\item What force is required to hold two electrons at a distance of $1.00\:\AA$ from one another in Newtons?
+\end{itemize}
