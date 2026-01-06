@@ -23,7 +23,7 @@ jobs:
         run: npm install -g mystmd
 
       - name: Build the book
-        run: myst build --html
+        run: myst build --html --base-url /Applied_Physical_Chemistry/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
