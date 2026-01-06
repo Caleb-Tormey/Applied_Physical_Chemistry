@@ -1,43 +1,5 @@
 name: deploy-book
 
-# Trigger the build only when you push to the master branch
-on:
-  push:
-    branches:
-      - master
-
-# This job installs dependencies, builds the book, and pushes it to the web
-jobs:
-  deploy-book:
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    steps:
-      - uses: actions/checkout@v4
-
-      # Install Python
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v5
-        with:
-          python-version: 3.11
-
-      # Install Jupyter Book
-      - name: Install dependencies
-        run: |
-          pip install -U jupyter-book
-
-      # Build the book
-      - name: Build the book
-        run: |
-          jupyter-book build .
-
-      # Upload the HTML for GitHub Pages
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: "_build/name: deploy-book
-
 on:
   push:
     branches:
@@ -52,25 +14,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Use Node.js instead of Python (Required for Jupyter Book 2 / MyST)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "latest"
 
-      # Install the new Jupyter Book engine (MyST)
       - name: Install MyST
         run: npm install -g mystmd
 
-      # Build the book using the new command
       - name: Build the book
         run: myst build --html
 
-      # Upload the HTML (MyST puts it in _build/html by default)
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "_build/html"
+          path: _build/html
 
       - name: Deploy to GitHub Pages
         id: deployment
