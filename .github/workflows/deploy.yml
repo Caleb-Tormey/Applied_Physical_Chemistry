@@ -36,9 +36,42 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          path: "_build/name: deploy-book
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy-book:
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+
+      # Use Node.js instead of Python (Required for Jupyter Book 2 / MyST)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "latest"
+
+      # Install the new Jupyter Book engine (MyST)
+      - name: Install MyST
+        run: npm install -g mystmd
+
+      # Build the book using the new command
+      - name: Build the book
+        run: myst build --html
+
+      # Upload the HTML (MyST puts it in _build/html by default)
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
           path: "_build/html"
 
-      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
