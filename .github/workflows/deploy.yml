@@ -25,7 +25,7 @@ jobs:
       - name: Build the book        
         run: | 
           export BASE_URL="/Applied_Physical_Chemistry/"
-          myst build --html
+          myst build --html --execute
          
 
       - name: Upload artifact
