@@ -1,0 +1,3 @@
+## Introduction to Molecular Symmetry Elements
+
+Molecular symmetry is not merely an aesthetic description of a molecule’s shape; it is a fundamental tool in physical chemistry. In spectroscopy, symmetry allows us to predict which vibrational modes are visible (active) or invisible (inactive) in IR and Raman spectra. It also simplifies the complex mathematics of quantum mechanics by allowing us to classify molecular wavefunctions.

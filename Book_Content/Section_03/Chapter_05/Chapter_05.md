@@ -32,8 +32,12 @@ except Exception as e:
     print(f"Error setting project path: {e}")
 :::
 # Chapter 5: Molecular Symmetry and Spectroscopy
-
-## Introduction to Molecular Symmetry Elements
+Blah blah blah
+:::{include} part1-Intro_mol_sym.md
+:::
+%## Introduction to Molecular Symmetry Elements
+%```markdown
+%```{include} /Book_Content/Section_03/Chapter_05/part1-intro_mol_sym.md
 :::{code-cell}
 :tags: ["remove-input"]
 
