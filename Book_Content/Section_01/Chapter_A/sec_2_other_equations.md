@@ -30,8 +30,33 @@ Or for more challenging problems you might have learned how to complete the squa
 x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 :::
 In this class we will encounter higher order polynomials. There are methods for solving these, however, we will not learn how to do them explicitly. Rather we will use computational tools like _Mathematica_ or Python. 
- 
-  
+:::{code-cell}
+:tags: ["remove-input"]
+  # --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+questions = QuestionBlock()
+questions.add_question(
+    question_id="sec-01-ch-A-q02",
+    question_text="Physical Validity of Roots When you solve a quadratic equation describing a physical event (like the time it takes for a ball to hit the ground), you often get two mathematical solutions (e.g., $t = 5$ seconds and $t = -2$ seconds). Mathematically both are correct, but physically we usually discard one. How do you decide which mathematical root represents the real world and which is an artifact of the equation? "
+)
+display(HTML(questions.render()))
+#**Conceptual Question:** Given the possible quantum numbers is it possible to have zero vibrational energy in a quantum HO? Please justify and explain your answer. 
+:::
 ### Exponentials and Logarithms 
 We will start by looking at $e$ and $\ln$. These are called the exponential (sometimes referred to as the Natural number or Euler's number) and the natural logarithm respectively. They are ubiquitous in natural science due to the fact many physical processes are well modeled by first order differential equations. Another point of these two operations is that they are the inverse of one another. For example,
 :::{math}
@@ -108,10 +133,10 @@ x \approx  6.6386\\
 Here is the first part of my chapter. Now for a question.
 
 Often the place students get the most screwed up is when attempting to do algebraic manipulation with these two operations. The biggest issue is misapplying the rules from section {ref}`properties-of-exponentials-and-logarithms`
+
 :::{code-cell}
 :tags: ["remove-input"]
-
-# --- START: Required for every block that imports from _ext ---
+  # --- START: Required for every block that imports from _ext ---
 import sys
 import os
 from IPython.display import display, HTML
@@ -130,12 +155,13 @@ from _ext.interactive_qa import QuestionBlock
 # --- END: Required for every block ---
 questions = QuestionBlock()
 questions.add_question(
-    question_id="sec-2-ch-2-q01",
-    question_text="Given the possible quantum numbers is it possible to have zero vibrational energy in a quantum HO? Please justify and explain your answer. "
+    question_id="sec-01-ch-A-q03",
+    question_text="Scaling and Compression In chemistry, we often measure quantities that vary over huge ranges, such as proton concentration $[H^+]$ which can range from $10^{-1}$ to $10^{-14}$. Why do we use a logarithmic scale (like pH) to represent these numbers? What does a <b> linear</b> change in pH (going from 1 to 2) represent in terms of the actual physical change in concentration?"
 )
 display(HTML(questions.render()))
 #**Conceptual Question:** Given the possible quantum numbers is it possible to have zero vibrational energy in a quantum HO? Please justify and explain your answer. 
 :::
+
 
 
 
@@ -295,6 +321,34 @@ fig.show()
 | **Even/Odd** | $\sin(-\theta) = -\sin \theta$ | $\cos(-\theta) = \cos \theta$ |
 | **Sum/Diff** | $\sin(\alpha \pm \beta) = \sin \alpha \cos \beta \pm \cos \alpha \sin \beta$ | $\cos(\alpha \pm \beta) = \cos \alpha \cos \beta \mp \sin \alpha \sin \beta$ |
 | **Double Angle** | $\sin(2\theta) = 2\sin \theta \cos \theta$ | $\cos(2\theta) = \cos^2 \theta - \sin^2 \theta$ |
+
+:::{code-cell}
+:tags: ["remove-input"]
+  # --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+questions = QuestionBlock()
+questions.add_question(
+    question_id="sec-01-ch-A-q04",
+    question_text="Periodicity and Waves Trigonometric functions like $\\sin(x)$  and $\\cos(x)$ repeat their values in a cycle. If a physical system (like a vibrating bond in a molecule) is modeled using a sine wave, what physical property does the period of the function represent? If you increase the frequency of vibration, how does that change the shape of the sine function?"
+)
+display(HTML(questions.render()))
+#**Conceptual Question:** Given the possible quantum numbers is it possible to have zero vibrational energy in a quantum HO? Please justify and explain your answer. 
+:::
 ### Simultaneous Equations
 In physical science, you often encounter situations where multiple conditions must be satisfied at the same time. Mathematically, this leads to simultaneous equations—a set of equations containing multiple variables that must be solved together. The solution to a system of simultaneous equations is the specific set of values for the variables that makes all the equations true. Geometrically, if you have a system of two equations with two variables ($x$ and $y$), the solution corresponds to the point(s) where their graphs intersect. Here would be a simple example of two simultaneous equations. Recall, from algebra class there are several ways to solve these problems. In one method you can scale equations by multiplying all the terms by the same value and you can add and subtract equations to cancel certain variables. 
 
@@ -393,4 +447,31 @@ plt.legend()
 
 plt.show()
 
+:::
+:::{code-cell}
+:tags: ["remove-input"]
+  # --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+questions = QuestionBlock()
+questions.add_question(
+    question_id="sec-01-ch-A-q05",
+    question_text="Degrees of Freedom Imagine you have a mixture containing two unknown compounds, A and B. If you measure the total light absorbance of the mixture at just one wavelength, you have one equation with two unknown concentrations ($C_A$ and $C_B$). Why is this physically insufficient to determine the composition of the mixture, and why does adding a second measurement at a different wavelength allow you to solve it?"
+)
+display(HTML(questions.render()))
+#**Conceptual Question:** Given the possible quantum numbers is it possible to have zero vibrational energy in a quantum HO? Please justify and explain your answer. 
 :::

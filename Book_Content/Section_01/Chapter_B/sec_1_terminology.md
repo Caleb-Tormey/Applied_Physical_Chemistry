@@ -70,7 +70,32 @@ Look in {ref}`tbl_derived_units` for some of the derived units we will be using.
 "Magnetic Flux Density", "Tesla", "T", "N/(A⋅m)"
 :::
 
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+questions = QuestionBlock()
+questions.add_question(
+    question_id="sec-01-ch-B-q01",
+    question_text="If you are measuring the distance between two molecules in a crystal lattice, why might you choose a derived unit or a specific power-of-ten prefix (like nano- or pico-) rather than the standard SI unit of meters?"
+)
+display(HTML(questions.render()))
+:::
 ### Unit Conversion
 
 It will often be required to convert from one set of units to another based on experimental procedures or previous studies. It is vital you be able to confidently change units, and especially derived units, accurately. The key to making the conversions is to pay attention to whether the unit is in the numerator or denominator. Most errors come from converting with inverted relationships. Key to doing this correctly is writing out **ALL** units and not taking shortcuts. Let's show a couple of examples. 
@@ -317,7 +342,32 @@ Cartesian
 We simply add a vertical $z$-axis perpendicular to the $xy$ plane.
 * **Coordinates:** $(x, y, z)$
 * **Best for:** Boxes, cubes, standard infinite potential wells.
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+questions = QuestionBlock()
+questions.add_question(
+    question_id="sec-01-ch-B-q02",
+    question_text="In a 3D coordinate system, if you move an object only along the $z$-axis, what happens to its $x$ and $y$ coordinates? How does this simplify the calculation of the distance from the origin?"
+)
+display(HTML(questions.render()))
+:::
 Cyclindrical Coordinates
 magine taking the 2D Polar system and just extruding it upwards. This creates a system defined by a circular base and a height.
 * **Coordinates:** $(r, \theta, z)$
@@ -325,132 +375,7 @@ magine taking the 2D Polar system and just extruding it upwards. This creates a 
     * $\theta$: Angle in the $xy$ plane (azimuthal).
     * $z$: Height above the $xy$ plane.
 * **Best for:** Wires, pipes, magnetic fields around a current.
-:::{code-cell} python
-:tags: [remove-input]
-:label: cylindrical_coordinates
-import numpy as np
-import plotly.graph_objects as go
-
-def create_cylindrical_diagram_fixed():
-    fig = go.Figure()
-
-    # --- Parameters for the Example Point P ---
-    r_p = 4        
-    theta_deg = 60 
-    z_p = 5        
-    
-    theta_rad = np.deg2rad(theta_deg)
-
-    # Convert P to Cartesian coordinates
-    x_p = r_p * np.cos(theta_rad)
-    y_p = r_p * np.sin(theta_rad)
-
-    # --- 1. Contextual Cylinder Outlines ---
-    phi_cyl = np.linspace(0, 2*np.pi, 100)
-    cyl_x = r_p * np.cos(phi_cyl)
-    cyl_y = r_p * np.sin(phi_cyl)
-
-    # Base Circle
-    fig.add_trace(go.Scatter3d(
-        x=cyl_x, y=cyl_y, z=np.zeros_like(cyl_x),
-        mode='lines', line=dict(color='lightblue', dash='dot', width=2), 
-        opacity=0.4, hoverinfo='skip'
-    ))
-    # Top Circle
-    fig.add_trace(go.Scatter3d(
-        x=cyl_x, y=cyl_y, z=np.full_like(cyl_x, z_p),
-        mode='lines', line=dict(color='lightblue', dash='dot', width=2), 
-        opacity=0.4, hoverinfo='skip'
-    ))
-
-    # --- 2. Geometry Lines ---
-    # Projection Drop
-    fig.add_trace(go.Scatter3d(
-        x=[x_p, x_p], y=[y_p, y_p], z=[z_p, 0],
-        mode='lines', line=dict(color='grey', dash='dash'), hoverinfo='skip'
-    ))
-
-    # Radial Line 'r'
-    fig.add_trace(go.Scatter3d(
-        x=[0, x_p], y=[0, y_p], z=[0, 0],
-        mode='lines+text', line=dict(color='blue', width=5),
-        text=["", "<b>r</b>"], textposition="middle center", 
-        textfont=dict(size=16, color='blue')
-    ))
-    
-    # Height Line 'z'
-    fig.add_trace(go.Scatter3d(
-        x=[0, 0], y=[0, 0], z=[0, z_p],
-        mode='lines+text', line=dict(color='green', width=5),
-        text=["", "<b>z</b>"], textposition="middle left", 
-        textfont=dict(size=16, color='green')
-    ))
-    
-    # Connector top
-    fig.add_trace(go.Scatter3d(
-        x=[0, x_p], y=[0, y_p], z=[z_p, z_p],
-        mode='lines', line=dict(color='grey', dash='dash'), hoverinfo='skip'
-    ))
-
-    # Angle 'theta'
-    arc_angles = np.linspace(0, theta_rad, 30)
-    arc_dist = r_p * 0.3
-    arc_x = arc_dist * np.cos(arc_angles)
-    arc_y = arc_dist * np.sin(arc_angles)
-    
-    fig.add_trace(go.Scatter3d(
-        x=arc_x, y=arc_y, z=np.zeros_like(arc_x),
-        mode='lines', line=dict(color='magenta', width=4), hoverinfo='skip'
-    ))
-    
-    fig.add_trace(go.Scatter3d(
-        x=[arc_x[15]], y=[arc_y[15]], z=[0],
-        mode='text', text=["<b>θ</b>"], textposition="bottom right", 
-        textfont=dict(size=16, color='magenta')
-    ))
-
-    # --- 3. Points ---
-    # Origin
-    fig.add_trace(go.Scatter3d(
-        x=[0], y=[0], z=[0], mode='markers', marker=dict(size=5, color='black'), hoverinfo='skip'
-    ))
-    # Projection
-    fig.add_trace(go.Scatter3d(
-        x=[x_p], y=[y_p], z=[0], mode='markers', marker=dict(size=5, color='grey'), hoverinfo='skip'
-    ))
-    # Point P
-    fig.add_trace(go.Scatter3d(
-        x=[x_p], y=[y_p], z=[z_p],
-        mode='markers+text', marker=dict(size=10, color='red'),
-        text=["<b>P(r, θ, z)</b>"], textposition="top center", textfont=dict(size=16)
-    ))
-
-    # --- Layout ---
-    # Simplified axis config (removed titlefont)
-    axis_config = dict(showgrid=False, zeroline=True, showline=True, showticklabels=False)
-    
-    fig.update_layout(
-        title="<b>Cylindrical Coordinate System (r, θ, z)</b>",
-        width=800, height=800,
-        showlegend=False,
-        template="plotly_white",
-        scene=dict(
-            # Define Title and Font structure explicitly here
-            xaxis=dict(**axis_config, title=dict(text="X", font=dict(size=20)), range=[-1, 6]),
-            yaxis=dict(**axis_config, title=dict(text="Y", font=dict(size=20)), range=[-1, 6]),
-            zaxis=dict(**axis_config, title=dict(text="Z", font=dict(size=20)), range=[0, 7]),
-            aspectmode='cube',
-            camera=dict(
-                eye=dict(x=1.6, y=1.6, z=1.2),
-                center=dict(x=0, y=0, z=-0.2)
-            )
-        )
-    )
-
-    return fig
-
-fig_cyl = create_cylindrical_diagram_fixed()
-fig_cyl.show()
+:::{include} interactive_code/cylindrical_coordinates.md
 :::
 Spherical Coordinates
 
@@ -476,192 +401,31 @@ questions.add_question(
 )
 display(HTML(questions.render()))
 :::
+:::{include} interactive_code/spherical_coordinates.md
+:::
 :::{code-cell} python
 :tags: ["remove-input"]
-:label: spherical_cartesian_convert
-from IPython.display import HTML, display
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
-def create_js_spherical_plot():
-    html_code = """
-    <div style="font-family: 'Arial', sans-serif; max-width: 800px; margin: auto; border: 1px solid #ddd; padding: 20px; border-radius: 8px;">
-        <h3 style="text-align: center;">Interactive Spherical Coordinates (r, θ, φ)</h3>
-        
-        <div id="spherical_plot" style="width: 100%; height: 600px;"></div>
-        
-        <div style="background-color: #f9f9f9; padding: 15px; border-radius: 5px;">
-            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-                
-                <div style="flex: 1; min-width: 200px;">
-                    <label for="r_s_slider" style="font-weight: bold;">Radius (r): <span id="r_s_val" style="color: blue;">10.0</span></label>
-                    <input type="range" id="r_s_slider" min="1" max="20" step="0.5" value="10" style="width: 100%;">
-                </div>
-                
-                <div style="flex: 1; min-width: 200px;">
-                    <label for="theta_s_slider" style="font-weight: bold;">Polar Angle (θ): <span id="theta_s_val" style="color: magenta;">45</span>°</label>
-                    <input type="range" id="theta_s_slider" min="0" max="180" step="1" value="45" style="width: 100%;">
-                    <small style="color: grey;">Angle from top Z-axis</small>
-                </div>
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
 
-                <div style="flex: 1; min-width: 200px;">
-                    <label for="phi_s_slider" style="font-weight: bold;">Azimuthal (φ): <span id="phi_s_val" style="color: green;">45</span>°</label>
-                    <input type="range" id="phi_s_slider" min="0" max="360" step="1" value="45" style="width: 100%;">
-                    <small style="color: grey;">Rotation in XY plane</small>
-                </div>
-            </div>
-
-            <div style="margin-top: 15px; text-align: center; font-size: 16px;">
-                Cartesian: 
-                <b>x = <span id="x_s_out">0.00</span></b>, 
-                <b>y = <span id="y_s_out">0.00</span></b>, 
-                <b>z = <span id="z_s_out">0.00</span></b>
-            </div>
-        </div>
-
-        <script>
-            if (typeof Plotly === 'undefined') {
-                var script = document.createElement('script');
-                script.src = 'https://cdn.plot.ly/plotly-latest.min.js';
-                document.head.appendChild(script);
-                script.onload = initSphericalPlot;
-            } else {
-                initSphericalPlot();
-            }
-
-            function initSphericalPlot() {
-                var rSlider = document.getElementById('r_s_slider');
-                var thetaSlider = document.getElementById('theta_s_slider');
-                var phiSlider = document.getElementById('phi_s_slider');
-                
-                var rDisp = document.getElementById('r_s_val');
-                var thetaDisp = document.getElementById('theta_s_val');
-                var phiDisp = document.getElementById('phi_s_val');
-                
-                var xOut = document.getElementById('x_s_out');
-                var yOut = document.getElementById('y_s_out');
-                var zOut = document.getElementById('z_s_out');
-
-                function getSphericalCoords(r, thetaDeg, phiDeg) {
-                    var tRad = thetaDeg * (Math.PI / 180);
-                    var pRad = phiDeg * (Math.PI / 180);
-                    
-                    var x = r * Math.sin(tRad) * Math.cos(pRad);
-                    var y = r * Math.sin(tRad) * Math.sin(pRad);
-                    var z = r * Math.cos(tRad);
-                    
-                    return {x: x, y: y, z: z, tRad: tRad, pRad: pRad};
-                }
-
-                // Initial Data
-                var r0 = parseFloat(rSlider.value);
-                var t0 = parseFloat(thetaSlider.value);
-                var p0 = parseFloat(phiSlider.value);
-                var c0 = getSphericalCoords(r0, t0, p0);
-
-                // --- Traces ---
-                
-                // 1. Main Vector (Blue)
-                var traceVec = {
-                    type: 'scatter3d',
-                    x: [0, c0.x], y: [0, c0.y], z: [0, c0.z],
-                    mode: 'lines+markers',
-                    line: {color: 'blue', width: 6},
-                    marker: {size: 4, color: 'blue'},
-                    name: 'r Vector'
-                };
-
-                // 2. The Shadow on Floor (Grey Dashed) - Shows Phi projection
-                var traceShadow = {
-                    type: 'scatter3d',
-                    x: [0, c0.x], y: [0, c0.y], z: [0, 0],
-                    mode: 'lines',
-                    line: {color: 'grey', width: 4, dash: 'dash'},
-                    name: 'XY Projection'
-                };
-
-                // 3. The Height Drop (Red) - Shows Z height
-                var traceHeight = {
-                    type: 'scatter3d',
-                    x: [c0.x, c0.x], y: [c0.y, c0.y], z: [c0.z, 0],
-                    mode: 'lines',
-                    line: {color: 'red', width: 4},
-                    name: 'z Height'
-                };
-
-                // 4. Theta Arc (Magenta) - Arc from Z-axis down to vector
-                function makeThetaArc(r, tRad, pRad) {
-                    var n = 15;
-                    var ax = [], ay = [], az = [];
-                    var arcR = r * 0.4; // 40% of length
-                    for(var i=0; i<=n; i++){
-                        var ang = (tRad/n)*i;
-                        // For a fixed Phi, vary Theta from 0 to current
-                        ax.push(arcR * Math.sin(ang) * Math.cos(pRad));
-                        ay.push(arcR * Math.sin(ang) * Math.sin(pRad));
-                        az.push(arcR * Math.cos(ang));
-                    }
-                    return {x: ax, y: ay, z: az};
-                }
-                var tArc = makeThetaArc(r0, c0.tRad, c0.pRad);
-                var traceTheta = {
-                    type: 'scatter3d',
-                    x: tArc.x, y: tArc.y, z: tArc.z,
-                    mode: 'lines',
-                    line: {color: 'magenta', width: 4},
-                    name: 'Theta'
-                };
-
-                var layout = {
-                    scene: {
-                        xaxis: {range: [-20, 20], title: 'X'},
-                        yaxis: {range: [-20, 20], title: 'Y'},
-                        zaxis: {range: [-20, 20], title: 'Z'},
-                        aspectmode: 'cube',
-                        camera: {
-                            eye: {x: 1.5, y: 1.5, z: 1.2}
-                        }
-                    },
-                    margin: {t: 0, b: 0, l: 0, r: 0},
-                    showlegend: false
-                };
-                
-                var config = {responsive: true, displayModeBar: false};
-
-                Plotly.newPlot('spherical_plot', [traceVec, traceShadow, traceHeight, traceTheta], layout, config);
-
-                // --- Update Loop ---
-                function updateSphere() {
-                    var r = parseFloat(rSlider.value);
-                    var t = parseFloat(thetaSlider.value);
-                    var p = parseFloat(phiSlider.value);
-                    
-                    rDisp.innerText = r.toFixed(1);
-                    thetaDisp.innerText = t.toFixed(0);
-                    phiDisp.innerText = p.toFixed(0);
-                    
-                    var c = getSphericalCoords(r, t, p);
-                    xOut.innerText = c.x.toFixed(2);
-                    yOut.innerText = c.y.toFixed(2);
-                    zOut.innerText = c.z.toFixed(2);
-                    
-                    var newTArc = makeThetaArc(r, c.tRad, c.pRad);
-                    
-                    // Efficiently restyle the data
-                    Plotly.react('spherical_plot', [
-                        {x: [0, c.x], y: [0, c.y], z: [0, c.z]},     // Vector
-                        {x: [0, c.x], y: [0, c.y], z: [0, 0]},       // Shadow
-                        {x: [c.x, c.x], y: [c.y, c.y], z: [c.z, 0]}, // Height
-                        {x: newTArc.x, y: newTArc.y, z: newTArc.z}   // Theta Arc
-                    ], layout);
-                }
-
-                rSlider.addEventListener('input', updateSphere);
-                thetaSlider.addEventListener('input', updateSphere);
-                phiSlider.addEventListener('input', updateSphere);
-            }
-        </script>
-    </div>
-    """
-    return HTML(html_code)
-
-create_js_spherical_plot()
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+questions = QuestionBlock()
+questions.add_question(
+    question_id="sec-01-ch-B-q03",
+    question_text="Explain it is helpful to have different coordinate systems. As part of your explanation give examples of when you might want one system over another. "
+)
+display(HTML(questions.render()))
 :::

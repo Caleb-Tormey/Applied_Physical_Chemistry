@@ -55,7 +55,9 @@ The emphasis of this book is not in-depth, abstract and rigorous mathematical de
 
 ## Summary of stuff 
 
-here is a summary...probably not using it
+**Tools of the Trade: Algebra and Functions** Mathematics provides the grammar for describing the physical world. At the foundation, we rely on algebra and the concept of dimensional consistency; unlike abstract math, physical variables carry units, and equations must balance both numerically and dimensionally. We frequently model reality using specific types of functions. Polynomials help us find equilibrium points through their roots, though we must always interpret which mathematical solutions are physically possible. Exponentials and logarithms are particularly vital in chemistry, allowing us to handle vast scales (like pH) and model natural decay or probability distributions. Furthermore, trigonometric functions and the symmetry of even and odd functions provide the framework for understanding periodic motion and simplifying the complex equations found in quantum mechanics.
+
+**The Calculus of Change: Derivatives and Integrals** Beyond static relationships, physical science is fundamentally about change and accumulation. The derivative serves as our tool for measuring instantaneous rates of change, geometrically represented as the slope of a curve. It allows us to determine how sensitive a system is to fluctuations and to identify stable states by locating where the slope is zero (minima and maxima). Conversely, integration allows us to calculate accumulation—summing up varying rates to find total quantities, like calculating total energy from power or probability from a wavefunction. Whether finding the area under a curve geometrically or solving definite integrals using substitution and tables, calculus provides the bridge between theoretical models and measurable physical quantities.
 
 :::{code-cell} python
 :tags: ["remove-input"]
@@ -65,34 +67,64 @@ from IPython.display import display, HTML
 
 # This renders the final control panel.
 # Pass the desired title for the printed page here.
-manager = QAManager(page_title="Chapter 2: Foundations of Quantum Mechanics")
+manager = QAManager(page_title="Chapter A: Mathematics Review ")
 display(HTML(manager.render()))
 :::
 ## Practice Problems
 
-You are free to do none, some or all these problems as you see fit. They would be very helpful to use in studying for the chapter exams. 
-- Solve the following problems for $x$
-    * $2 + x = 34 + 2y$
-    * $\frac{3y}{17x} = 15$
-    * $\frac{3y^2 + x}{10y} = 15y + y^2$
-- Given the following polynomials find the values of x 
-    * $x^2 + 4x + 3= 0$  
-    * $2x^2 + 16x - 4 = 0$
-- Given the following exponential and logrithmic equations, solve for x
-    * $Ae^{2x} = y$
-    * $-log_{10}(x) = 2.3$
-    * $e^{2x}−5e^x+6=0$
-- Assuming you only have the natural log function($ln$) on your calculator, calculate the value of $x$ in the following equations:
-    * $x = log_{10}\left(810\right)$
-    * $x = log_{10}\left(12\right) - log_{10}\left(13\right)$
-    * $C = log_a\left(x\right) + log_b\left(x\right)$
-- Show the following relationships are true. It may be helpful to use trigonometric identities.  
-    * $\sin^2\left(\frac{\pi}{4}\right) + \tan\left(\frac{\pi}{4}\right) = \frac{3}{2}$
-    * $4 \cos^2\left(x\right) - 2 = 2\cos\left(2x\right)$
-    * $\sin\left(\alpha -\beta\right) + \sin\left(\alpha +\beta\right) = 2\sin\left(\alpha\right)\cos\left(\beta\right)$
-- If $g(x) = a^x$ and $f(x) = a^{2x}$ solve the following problems
-    * $g\left(x\right)f\left(x\right) = \:?$
-    * $\frac{f\left(x\right)}{g\left(x\right)}= \:?$
-    * $g(x)^2f(x)^{-1}=\:?$
-- Problem 4
+You are free to do none, some, or all of these problems as you see fit. They are designed to mimic the mathematical manipulations you will encounter in the rest of the book.
+
+### 1. Algebra and Rearrangement
+*Solve the following equations for $x$ in terms of the other variables.*
+1.  **Simple:** $2 + x = 34 + 2y$
+2.  **Intermediate:** $\frac{3y}{17x} = 15$
+3.  **Advanced:** $\frac{3y^2 + x}{10y} = 15y + y^2$
+
+### 2. Roots of Polynomials
+*Find the values of $x$ that satisfy these equations.*
+1.  **Simple (Factorable):** $x^2 + 4x + 3= 0$
+2.  **Intermediate (Quadratic Formula):** $2x^2 + 16x - 4 = 0$
+3.  **Advanced (Cubic/Substitution):** $x^4 - 5x^2 + 4 = 0$ *(Hint: Treat $x^2$ as the variable first)*
+
+### 3. Exponentials and Logarithms
+*Solve for $x$.*
+1.  **Simple:** $Ae^{2x} = y$
+2.  **Intermediate:** $-\log_{10}(x) = 2.3$ *(Important for pH calculations)*
+3.  **Advanced:** $e^{2x} - 5e^x + 6 = 0$ *(Hint: This is a quadratic in disguise. Let $u = e^x$)*
+
+### 4. Logarithm Rules
+*Assume you only have the natural log function ($\ln$) on your calculator. Use the change-of-base formula or log properties to express $x$ in terms of values you could type into a calculator.*
+1.  **Simple:** $x = \log_{10}(810)$
+2.  **Intermediate:** $x = \log_{10}(12) - \log_{10}(13)$
+3.  **Advanced:** Solve for $x$ in terms of $C, a, b$: $C = \log_a(x) + \log_b(x)$
+
+### 5. Trigonometric Identities
+*Prove that the LHS (Left Hand Side) equals the RHS (Right Hand Side). Construction of the unit circle may be helpful.*
+1.  **Simple:** $\sin^2\left(\frac{\pi}{4}\right) + \tan\left(\frac{\pi}{4}\right) = \frac{3}{2}$
+2.  **Intermediate:** $4 \cos^2(x) - 2 = 2\cos(2x)$
+3.  **Advanced:** $\sin(\alpha -\beta) + \sin(\alpha +\beta) = 2\sin(\alpha)\cos(\beta)$
+
+### 6. Exponent Rules
+*Given $g(x) = a^x$ and $f(x) = a^{2x}$, simplify the following expressions into a single term like $a^{(\dots)}$.*
+1.  **Simple:** $g(x)f(x)$
+2.  **Intermediate:** $\frac{f(x)}{g(x)}$
+3.  **Advanced:** $g(x)^2 f(x)^{-1}$
+
+### 7. Even and Odd Functions
+*Determine if the following functions are Even ($f(x)=f(-x)$), Odd ($f(-x)=-f(x)$), or Neither. These symmetries are crucial for simplifying quantum mechanical integrals.*
+1.  **Simple:** $f(x) = 3x^4 - 2x^2 + 1$
+2.  **Intermediate:** $f(x) = x \sin(x)$
+3.  **Advanced:** Without calculating the value, evaluate the integral $\int_{-5}^{5} (x^3 - 3x) \, dx$ based on symmetry arguments.
+
+### 8. Derivatives
+*Calculate the first derivative, $f'(x)$, for the following functions.*
+1.  **Simple (Power Rule):** $f(x) = 4x^3 - \frac{2}{x^2} + 5$
+2.  **Intermediate (Product Rule + Exponential):** $f(x) = x^2 e^{-3x}$ *(Common in radial probability distributions)*
+3.  **Advanced (Chain Rule + Trig):** $f(x) = \ln(\cos(x^2))$
+
+### 9. Integrals
+*Calculate the following integrals.*
+1.  **Simple (Indefinite):** $\int (3x^2 + e^{2x}) \, dx$
+2.  **Intermediate (Definite):** $\int_{1}^{3} \frac{1}{x} \, dx$
+3.  **Advanced (Technique):** $\int_{0}^{\infty} x e^{-x^2} \, dx$ *(Hint: Use U-substitution where $u = -x^2$. Watch your limits!)*
  

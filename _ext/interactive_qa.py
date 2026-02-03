@@ -1,5 +1,6 @@
 import html
 import uuid
+import json
 
 class QuestionBlock:
     """
@@ -32,10 +33,14 @@ class QuestionBlock:
         html_parts = []
         for q in self.questions:
             safe_id = html.escape(q['id'])
-            safe_text = html.escape(q['text'])
+            # We escape the text for the data attribute to ensure it doesn't break the HTML structure
+            attr_safe_text = html.escape(q['text'])
+            # For the visible label, we allow HTML tags (like <b> or <i>) to render formatting
+            display_text = q['text']
+            
             html_parts.append(f"""
-            <div class="question-container mb-8" data-question-id="{safe_id}">
-                <label for="{safe_id}" class="block text-lg font-semibold text-gray-700 mb-2">{safe_text}</label>
+            <div class="question-container mb-8" data-question-id="{safe_id}" data-raw-text="{attr_safe_text}">
+                <label for="{safe_id}" class="block text-lg font-semibold text-gray-700 mb-2">{display_text}</label>
                 <textarea id="{safe_id}" rows="5" class="answer-textarea w-full p-3 border border-gray-300 rounded-lg" placeholder="Type your answer here..."></textarea>
                 <div class="save-status text-xs text-gray-500 mt-1 h-4"></div>
             </div>
@@ -44,7 +49,7 @@ class QuestionBlock:
         all_questions_html = "\n".join(html_parts)
 
         return f"""
-        <div id="{widget_id}" class="qa-block-container">
+        <div id="{widget_id}" class="qa-block-container" style="clear: both; width: 100%;">
             {all_questions_html}
             <script>
             (function() {{
@@ -90,10 +95,16 @@ class QuestionBlock:
 class QAManager:
     """
     Renders the master control panel with 'Print All' and 'Clear All' buttons.
-    This should only be used ONCE at the end of a page.
+    Supports LaTeX rendering, custom macros, and refined print aesthetics.
     """
-    def __init__(self, page_title: str = "My Answers"):
+    def __init__(self, page_title: str = "My Answers", macros: dict = None):
+        """
+        Args:
+            page_title (str): Title for the printed page.
+            macros (dict): Custom LaTeX macros (e.g., {"bftext": ["\\\\mathbf{#1}", 1]})
+        """
         self.page_title = html.escape(page_title)
+        self.macros_json = json.dumps(macros or {})
         self._rendered = False
 
     def render(self) -> str:
@@ -103,12 +114,14 @@ class QAManager:
         widget_id = f"qa-manager-{uuid.uuid4().hex}"
 
         return f"""
-        <div id="{widget_id}" class="qa-manager-container my-8 p-6 bg-gray-100 rounded-xl border-2 border-dashed">
+        <div id="{widget_id}" class="qa-manager-container my-12 p-6 bg-gray-100 rounded-xl border-2 border-dashed" style="clear: both; display: block; width: 100%; position: relative; z-index: 50;">
             <style>
                 .qa-custom-button {{
                     color: white; font-weight: bold; padding: 0.75rem 1.5rem; border-radius: 0.5rem;
                     transition: filter 0.2s ease-in-out;
                     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+                    cursor: pointer;
+                    border: none;
                 }}
                 .qa-custom-button:hover {{ filter: brightness(1.1); }}
             </style>
@@ -132,6 +145,13 @@ class QAManager:
 
             const storageKey = 'jupyterBookAnswers';
 
+            // Helper to decode HTML entities (like &amp; or &quot;) from dataset strings
+            const decodeEntities = (text) => {{
+                const textArea = document.createElement('textarea');
+                textArea.innerHTML = text;
+                return textArea.value;
+            }};
+
             const printButton = container.querySelector('.print-all-button');
             const clearButton = container.querySelector('.clear-all-button');
             const confirmClearButton = container.querySelector('.confirm-clear-button');
@@ -140,25 +160,102 @@ class QAManager:
             if (printButton) {{
                 printButton.addEventListener('click', () => {{
                     const pageTitle = "{self.page_title}";
+                    const macros = {self.macros_json};
                     let printContents = `<h1>${{pageTitle}}</h1>`;
                     const savedAnswers = JSON.parse(localStorage.getItem(storageKey)) || {{}};
                     
-                    // Find all question containers on the page, not just in one block
                     document.querySelectorAll('.question-container').forEach(q => {{
                         const qId = q.dataset.questionId;
-                        const qText = q.querySelector('label').textContent.trim();
+                        // Use raw text to ensure delimiters ($ and \\) are clean for the printer
+                        const rawText = q.dataset.rawText || "Question";
+                        const qText = decodeEntities(rawText);
                         const answer = savedAnswers[qId] || 'No answer saved.';
-                        printContents += `<div style="break-inside: avoid; margin-bottom: 1.5rem;"><h2>${{qText}}</h2><p style="white-space: pre-wrap;">${{answer}}</p></div>`;
+                        
+                        printContents += `<div class="qa-item">
+                            <h2 class="question-header tex2jax_process">${{qText}}</h2>
+                            <p class="answer-text tex2jax_ignore">${{answer}}</p>
+                        </div>`;
                     }});
 
                     const iframe = document.createElement('iframe');
                     iframe.style.display = 'none';
                     document.body.appendChild(iframe);
                     const doc = iframe.contentWindow.document;
+                    
+                    const html = `
+                        <!DOCTYPE html>
+                        <html>
+                        <head>
+                            <title>${{pageTitle}}</title>
+                            <script>
+                                window.MathJax = {{
+                                    tex: {{ 
+                                        inlineMath: [['$', '$']],
+                                        displayMath: [['$$', '$$']],
+                                        processEscapes: true,
+                                        macros: ${{JSON.stringify(macros)}}
+                                    }},
+                                    options: {{
+                                        ignoreHtmlClass: 'tex2jax_ignore',
+                                        processHtmlClass: 'tex2jax_process'
+                                    }},
+                                    svg: {{ fontCache: 'global' }}
+                                }};
+                            <\\/script>
+                            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"><\\/script>
+                            <style>
+                                body {{ 
+                                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+                                    padding: 20px 40px; 
+                                    line-height: 1.4; 
+                                    color: #333;
+                                }}
+                                h1 {{ 
+                                    font-size: 18pt; 
+                                    border-bottom: 2px solid #2244b0; 
+                                    padding-bottom: 8px; 
+                                    margin-bottom: 24px; 
+                                    color: #2244b0;
+                                }}
+                                .qa-item {{ 
+                                    break-inside: avoid; 
+                                    margin-bottom: 1.5rem; 
+                                }}
+                                .question-header {{ 
+                                    font-size: 11pt; 
+                                    font-weight: 600; 
+                                    margin-bottom: 0.25rem; 
+                                    color: #444;
+                                }}
+                                .answer-text {{ 
+                                    white-space: pre-wrap; 
+                                    font-size: 11pt; 
+                                    margin-top: 0;
+                                    color: #000;
+                                    padding-left: 10px;
+                                    border-left: 2px solid #eee;
+                                }}
+                                @media print {{ 
+                                    body {{ padding: 0; }}
+                                    h1 {{ font-size: 16pt; }}
+                                }}
+                            </style>
+                        </head>
+                        <body class="tex2jax_ignore">
+                            ${{printContents}}
+                        </body>
+                        </html>
+                    `;
+
                     doc.open();
-                    doc.write(`<html><head><title>${{pageTitle}}</title><style>body{{font-family:sans-serif;}} h1{{font-size:24pt;}} h2{{font-size:14pt;}}</style></head><body>${{printContents}}</body></html>`);
+                    doc.write(html);
                     doc.close();
-                    setTimeout(() => {{ iframe.contentWindow.print(); document.body.removeChild(iframe); }}, 500);
+                    
+                    setTimeout(() => {{
+                        iframe.contentWindow.focus();
+                        iframe.contentWindow.print();
+                        document.body.removeChild(iframe);
+                    }}, 2000);
                 }});
             }}
 
@@ -175,10 +272,7 @@ class QAManager:
                 confirmClearButton.addEventListener('click', () => {{
                     clearTimeout(confirmTimeout);
                     localStorage.removeItem(storageKey);
-                    
-                    // Find all textareas on the page to clear them
                     document.querySelectorAll('.answer-textarea').forEach(t => {{ t.value = ''; }});
-                    
                     confirmClearButton.style.display = 'none';
                     clearButton.style.display = 'inline-block';
                     clearedMessage.style.display = 'inline';

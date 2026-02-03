@@ -85,3 +85,30 @@ y = \frac{56 + z}{x} - 1
 \end{align}
 :::
 ::::
+:::{code-cell}
+:tags: ["remove-input"]
+  # --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+questions = QuestionBlock()
+questions.add_question(
+    question_id="sec-01-ch-A-q01",
+    question_text="Dimensional Consistency In algebra, we treat numbers as abstract values (e.g., $x + 2 = 5$). However, in physical science, every variable represents a physical quantity with units (mass, length, time). Why is it mathematically impossible to solve an equation like $Length + Time = Mass$? What does the equals sign ($=$) imply about the units on the left side compared to the units on the right side? How might you use this fact to help check your algebra?"
+)
+display(HTML(questions.render()))
+#**Conceptual Question:** Given the possible quantum numbers is it possible to have zero vibrational energy in a quantum HO? Please justify and explain your answer. 
+:::
