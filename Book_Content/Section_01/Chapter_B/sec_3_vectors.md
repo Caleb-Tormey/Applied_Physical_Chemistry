@@ -97,3 +97,30 @@ Adjust the sliders below to change the $x$ and $y$ components of the vector. Obs
 :::{include} interactive_code/vectors.md
 :::
 **You will notice the magnitude of the vector equation is similar to how we found distances between two points. How are they related?**
+### Mathematical operations with vectors
+One of the most powerful aspects of vectors is that they can be combined to describe complex motions or forces. In physical chemistry, we often need to add vectors together—for example, when calculating the total dipole moment of a molecule by summing the bond dipoles of individual chemical bonds.
+
+#### Vector Addition (Component-wise)
+Mathematically, adding two vectors is straightforward if they are in Cartesian form. You simply add the corresponding components together. If we have $\vec{A} = A_x\hat{i} + A_y\hat{j}$ and $\vec{B} = B_x\hat{i} + B_y\hat{j}$, the resultant vector $\vec{R}$ is:
+
+$$\vec{R} = \vec{A} + \vec{B} = (A_x + B_x)\hat{i} + (A_y + B_y)\hat{j}$$
+
+#### Vector Subtraction
+Subtraction is treated as adding a negative vector. To subtract $\vec{B}$ from $\vec{A}$, you simply flip the direction of $\vec{B}$ and add it to $\vec{A}$:
+
+$$\vec{R} = \vec{A} - \vec{B} = (A_x - B_x)\hat{i} + (A_y - B_y)\hat{j}$$
+
+#### Visual Addition: The Head-to-Tail Method
+While the math is simple, the visual representation is key to understanding physical systems. To add two vectors visually, we use the Head-to-Tail method:
+
+1. Draw vector $\vec{A}$ starting from the origin.
+
+2. Draw vector $\vec{B}$ starting from the head (the tip) of vector $\vec{A}$.
+
+3. The resultant vector $\vec{R}$ is the arrow drawn from the tail of the first vector to the head of the last vector.
+
+#### Interactive Vector Addition Explorer
+
+Adjust the components of Vector $\vec{A}$ (Red) and Vector $\vec{B}$ (Green). The widget shows the Head-to-Tail addition. The Resultant Vector $\vec{R}$ (Blue) shows the final sum.
+:::{include} interactive_code/vector_addition.md
+:::
