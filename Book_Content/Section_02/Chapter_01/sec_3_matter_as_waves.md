@@ -1,7 +1,37 @@
 ## Matter as Waves
 
 ### De Broglie's Hypothesis
-Matter as Waves: The De Broglie HypothesisBy the 1920s, scientists had grudgingly accepted a "dual nature" for light: it behaved like a wave in interference experiments but like a particle (photon) in the photoelectric effect.1 This led a young French aristocrat and physicist, Louis de Broglie, to ask a profound question based on symmetry: If light waves can behave like particles, can matter particles behave like waves?The DerivationDe Broglie proposed his hypothesis in his 1924 PhD thesis.2 While the rigorous derivation involves complex relativity, the logic can be simplified by combining the two major energy equations of the time—Einstein's relativity and Planck's quantum theory.Einstein established the energy of a particle with mass $m$ (approximated for light as an equivalent mass):$$E = mc^2$$Planck established the energy of a quantum of frequency $\nu$:$$E = h\nu$$De Broglie equated these energies ($mc^2 = h\nu$) and used the relationship that frequency is velocity divided by wavelength ($\nu = v / \lambda$, or $c / \lambda$ for light):$$mc^2 = \frac{hc}{\lambda}$$Solving for wavelength ($\lambda$):$$\lambda = \frac{h}{mc}$$De Broglie’s leap of genius was to replace the speed of light ($c$) with the speed of any material particle ($v$). Since mass times velocity is momentum ($p$), we arrive at the famous De Broglie Equation:$$\lambda = \frac{h}{mv} = \frac{h}{p}$$This equation tells us that all matter has a wavelength. However, because Planck's constant ($h \approx 6.626 \times 10^{-34} \text{ J}\cdot\text{s}$) is incredibly small, the wavelength is only observable for objects with extremely tiny momentum—like electrons.Experimental Proof: Davisson-GermerDe Broglie's idea was radical and initially met with skepticism.3 However, only three years later, in 1927, Clinton Davisson and Lester Germer provided the proof.4 They fired a beam of electrons at a nickel crystal.5 If electrons were purely particles, they should have bounced off randomly. Instead, they observed a diffraction pattern—a phenomenon previously thought to be exclusive to waves (like X-rays).This discovery changed everything. It meant that electrons are not just orbiting "planets" but also "standing waves" confined around the nucleus. This wave property is not just a theoretical curiosity; we use it today in Electron Microscopes. Because high-speed electrons have wavelengths thousands of times shorter than visible light, they can resolve images at the atomic scale, far beyond the limits of traditional optical lenses.
+Matter as Waves: The De Broglie HypothesisBy the 1920s, scientists had grudgingly accepted a "dual nature" for light: it behaved like a wave in interference experiments but like a particle (photon) in the photoelectric effect.1 This led a young French aristocrat and physicist, Louis de Broglie, to ask a profound question based on symmetry: If light waves can behave like particles, can matter particles behave like waves?
+The Derivation De Broglie proposed his hypothesis in his 1924 PhD thesis.2 While the rigorous derivation involves complex relativity, the logic can be simplified by combining the two major energy equations of the time—Einstein's relativity and Planck's quantum theory.Einstein established the energy of a particle with mass $m$ (approximated for light as an equivalent mass):$$E = mc^2$$Planck established the energy of a quantum of frequency $\nu$:$$E = h\nu$$De Broglie equated these energies ($mc^2 = h\nu$) and used the relationship that frequency is velocity divided by wavelength ($\nu = v / \lambda$, or $c / \lambda$ for light):$$mc^2 = \frac{hc}{\lambda}$$Solving for wavelength ($\lambda$):$$\lambda = \frac{h}{mc}$$De Broglie’s leap of genius was to replace the speed of light ($c$) with the speed of any material particle ($v$). Since mass times velocity is momentum ($p$), we arrive at the famous De Broglie Equation:$$\lambda = \frac{h}{mv} = \frac{h}{p}$$This equation tells us that all matter has a wavelength. However, because Planck's constant ($h \approx 6.626 \times 10^{-34} \text{ J}\cdot\text{s}$) is incredibly small, the wavelength is only observable for objects with extremely tiny momentum—like electrons.
+
+Experimental Proof: Davisson-GermerDe Broglie's idea was radical and initially met with skepticism.3 However, only three years later, in 1927, Clinton Davisson and Lester Germer provided the proof.4 They fired a beam of electrons at a nickel crystal.5 If electrons were purely particles, they should have bounced off randomly. Instead, they observed a diffraction pattern—a phenomenon previously thought to be exclusive to waves (like X-rays).This discovery changed everything. It meant that electrons are not just orbiting "planets" but also "standing waves" confined around the nucleus. This wave property is not just a theoretical curiosity; we use it today in Electron Microscopes. Because high-speed electrons have wavelengths thousands of times shorter than visible light, they can resolve images at the atomic scale, far beyond the limits of traditional optical lenses.
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+questions = QuestionBlock()
+questions.add_question(
+    question_id="sec-02-ch-1-q07",
+    question_text="If we don't see macroscopic objects like baseballs behaving like waves in everyday life, why did De Broglie argue that they still possess a wavelength?"
+)
+display(HTML(questions.render()))
+:::
+
 
 ### Applying De Broglie to Bohr
 De Broglie's hypothesis provided the crucial missing puzzle piece for the Bohr model. Bohr had simply *assumed* that electrons could only exist in specific energy levels where their angular momentum was quantized ($L = n \cdot \frac{h}{2\pi}$). He didn't know why; it just made the math work to match the hydrogen spectrum.
@@ -30,6 +60,7 @@ We can mathematically prove that de Broglie's matter waves lead directly to Bohr
     $$L = n \left( \frac{h}{2\pi} \right)$$
 
 This is exactly Bohr's quantization rule! An electron orbit is only stable if its geometry allows for a standing de Broglie wave. The mysterious integer $n$ in Bohr's equations is simply counting the number of wavelengths fitted around the nucleus.
+
 
 :::{code-cell} python
 :tags: [remove-input]
@@ -136,4 +167,30 @@ def create_offline_standing_wave():
 
 fig_wave = create_offline_standing_wave()
 fig_wave.show()
+:::
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+questions = QuestionBlock()
+questions.add_question(
+    question_id="sec-02-ch-1-q08",
+    question_text="How does the concept of a standing wave provide a physical justification for the fixed orbits found in the Bohr model of the atom?"
+)
+display(HTML(questions.render()))
 :::

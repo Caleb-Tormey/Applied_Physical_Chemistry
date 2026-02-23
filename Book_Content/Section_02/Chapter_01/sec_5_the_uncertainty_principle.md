@@ -142,3 +142,53 @@ def create_uncertainty_visualizer_v2():
 fig_v2 = create_uncertainty_visualizer_v2()
 fig_v2.show()
 :::
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+questions = QuestionBlock()
+questions.add_question(
+    question_id="sec-02-ch-1-q10",
+    question_text="Why is the Uncertainty Principle a statement about the wave nature of matter rather than a limitation of our measuring technology? (Use the concept of a wave packet in your explanation)."
+)
+display(HTML(questions.render()))
+:::
+### The Double Slit Experiment
+
+While Davisson and Germer proved that electrons could diffract, the ultimate test of wave-like behavior is interference. In the classic double-slit experiment, originally performed with light (lasers), waves passing through two narrow slits overlap to create a pattern of "bright" and "dark" fringes on a detector screen.
+
+Interference One Electron at a Time
+
+When this experiment is performed with electrons, the results are identical to light. Even more shocking is the "single electron" version of the experiment. If we fire electrons so slowly that only one electron passes through the apparatus at a time, each electron still hits the screen as a single, localized dot (behaving like a particle).
+
+However, as thousands of these individual dots accumulate, the overall pattern that emerges is not two clumps behind the slits, but the interference pattern of a wave. This implies that a single electron somehow "interferes with itself," traveling through both slits simultaneously as a wave of probability.
+The Observer Effect and Wave Packets
+
+The most famous "weirdness" of quantum mechanics occurs when we try to watch the electron. If we set up a detector at the slits to determine exactly which hole the electron passes through, the interference pattern immediately disappears. The electrons begin behaving like classical billiard balls, forming two simple clumps.
+
+We can understand this through our earlier work on wave packets and the Uncertainty Principle:
+
+1. To see interference, an electron must have a well-defined wavelength ($\lambda$). A single, pure wavelength ($\Delta p = 0$) is infinitely spread out in space ($\Delta x = \infty$). It "sees" both slits at once.
+
+2. To detect position, we must localize the electron ($\Delta x \to 0$). As we saw with Fourier analysis, creating a localized "pulse" or wave packet requires summing together many different frequencies and wavelengths.
+
+3. By forcing the electron into a specific location (the left slit or the right slit), we introduce a massive uncertainty in its momentum ($\Delta p$). This "spread" of many different wavelengths washes out the coherent interference pattern.
+
+In short: determining "which-way" information destroys the wave-like coherence required for interference.
+:::{include} interactive_code/double_slit.md
+:::

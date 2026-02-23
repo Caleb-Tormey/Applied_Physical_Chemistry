@@ -102,6 +102,32 @@ create_plum_pudding_spaced()
 ### Rutherford's Gold Foil Experiment
 
 If Thomson's "Plum Pudding" model were correct, the atom would be a soft, diffuse sphere of charge. When Ernest Rutherford fired heavy, positively charged alpha particles at a thin sheet of gold foil, he expected them to punch through the atoms like bullets through a fog, with only minor deflections. Instead, he observed something shocking: while most particles passed straight through, a small fraction were deflected at sharp angles, and some even bounced straight back toward the source. This result was impossible for a diffuse cloud to achieve. Rutherford was forced to conclude that the positive charge and nearly all the mass were not spread out, but concentrated in an incredibly small, dense center: the nucleus. The atom was not a pudding, but mostly empty space, with electrons orbiting a tiny, massive core.
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+questions = QuestionBlock()
+questions.add_question(
+    question_id="sec-02-ch-1-q05",
+    question_text="How did Rutherford's discovery of a tiny, dense nucleus disprove the Plum Pudding model, and why did this create a new problem regarding the stability of orbiting electrons?"
+)
+display(HTML(questions.render()))
+:::
 ### The Bohr Model
 Rutherford’s nuclear model, while supported by the scattering data, faced a catastrophic problem. According to classical physics, a negatively charged electron orbiting a positive nucleus is accelerating; it should continuously radiate energy, lose speed, and spiral into the nucleus, causing the atom to collapse in a fraction of a second. Furthermore, this collapsing model suggests atoms should emit a continuous rainbow of light as they spiral, but experiments showed that hydrogen atoms emit light only at specific, discrete colors (the hydrogen line spectrum). Niels Bohr saved the nuclear model by applying the new idea of "quantization." He proposed that electrons are locked into specific, fixed orbits (energy levels) where they are stable and do not radiate energy. Light is emitted only when an electron "jumps" from a higher orbit to a lower one, releasing a photon with an energy that exactly matches the gap between the levels. This quantization perfectly explained the sharp lines in the hydrogen spectrum, proving that the laws of classical physics did not apply on the atomic scale.
 
@@ -259,4 +285,31 @@ def create_bohr_model():
 
 fig = create_bohr_model()
 fig.show()
+:::
+
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+questions = QuestionBlock()
+questions.add_question(
+    question_id="sec-02-ch-1-q06",
+    question_text="Why did Bohr have to propose that electrons exist in quantized orbits, and how did this explain the distinct lines seen in atomic emission spectra?"
+)
+display(HTML(questions.render()))
 :::

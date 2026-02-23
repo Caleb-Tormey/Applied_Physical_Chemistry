@@ -310,7 +310,32 @@ def create_opacity_interference_plot():
 fig_opacity = create_opacity_interference_plot()
 fig_opacity.show()
 :::
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+questions = QuestionBlock()
+questions.add_question(
+    question_id="sec-02-ch-1-q_a_01",
+    question_text="How does the phenomenon of interference distinguish wave behavior from particle behavior in classical physics?"
+)
+display(HTML(questions.render()))
+:::
 #### Diffraction
 Diffraction is the bending of waves around an obstacle or through a slit.
 

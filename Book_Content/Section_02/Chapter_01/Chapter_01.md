@@ -48,13 +48,7 @@ We will begin by looking at the origins of quantum mechanics. This history is lo
 :::
 :::{include} sec_5_the_uncertainty_principle.md
 :::
-## Light
-We need to talk about some of the basics of light before we move forward. This will not be our only discussion of this topic but it is important that we have some of the basics down before moving forward. The first is that light is an electro-magnetic wave. From the diagram (INCLUDE DIAGRAM), we see that it is an alternating electric wave in one dimension and then an alternating magnetic wave in a perpendicular plane. Because it is a wave we can define it based on the length of the wave. The length of the wave (measured from crest to crest) is called $\lambda$, pronounced lambda. We also know from other experiments that we won't discuss in this text that light all travels at the same speed in a vacuum. That is the speed of light, called $c$, and is approximately $300,000\:km\:s^{-1}$. So we know wavelengths of the light but we also know the speed. That means we can determine another property of light. Consider a wave is moving by you and you are at a certain point in space. You could see the rise and fall of the crest of the wave as it moves. You could see how many times the wave rises and falls in a given amount of time. Let's say per second. Given that all light, regardless of wavelength, moves at the same speed we can now find the frequency of the light. The relationship of these three quantities is summarized in equation {ref}`wave_freq`.
 
-:::{math}
-:label: wave_freq
-\lambda\nu = c
-:::
 
 
 
@@ -87,12 +81,6 @@ questions.add_question(
 display(HTML(questions.render()))
 #**Conceptual Question:** Given the possible quantum numbers is it possible to have zero vibrational energy in a quantum HO? Please justify and explain your answer. 
 :::
-### Waves
-There are some important properties and characteristics of waves we need to make sure we have down moving forward. 
-### Particles (Photons)
-These single photons
-
-### Energy
 :::{code-cell} python
 :tags: ["remove-input"]
 
@@ -106,7 +94,43 @@ display(HTML(manager.render()))
 :::
 ## Practice Problems
 
-You are free to do none, some or all these problems as you see fit. They would be very helpful to use in studying for the chapter exams.
+You are free to do none, some, or all of these problems as you see fit. They are designed to mimic the mathematical manipulations and physical reasoning you will encounter in the rest of the book.
+
+### 1. Nature of Waves and Light
+*Apply the fundamental relationship $\lambda\nu = c$ to electromagnetic radiation.*
+1.  **Simple:** A radio station broadcasts at a frequency of $101.5\:\text{MHz}$ ($1.015 \times 10^8\:s^{-1}$). What is the wavelength of this signal in meters?
+2.  **Intermediate:** A laser pointer emits green light with a wavelength of $532\:\text{nm}$. Calculate the frequency of this light. *(Hint: Remember to convert nanometers to meters first: $1\:\text{nm} = 10^{-9}\:\text{m}$).*
+3.  **Advanced:** Compare the time it takes for a radio wave ($\lambda = 3.0\:\text{m}$) vs. an X-ray ($\lambda = 1.0\:\text{Å}$) to travel from the Sun to the Earth (Distance $\approx 1.5 \times 10^{11}\:\text{m}$). What does this imply about the speed of light for different wavelengths in a vacuum?
+
+### 2. Quantized Energy (Planck)
+*Use $E = h\nu$ to determine the energy of individual photons. Constants: $h = 6.626 \times 10^{-34}\:\text{J s}$.*
+1.  **Simple:** Calculate the energy (in Joules) of a single photon of UV light with a frequency of $3.0 \times 10^{15}\:\text{Hz}$.
+2.  **Intermediate:** Calculate the energy of a photon of red light with a wavelength of $700\:\text{nm}$. *(Hint: You must combine $E=h\nu$ and $c=\lambda\nu$).*
+3.  **Advanced (Molar Energy):** In chemistry, we often work with moles. Calculate the total energy contained in **one mole** of photons with a wavelength of $254\:\text{nm}$ (UV-C light). Compare this to the energy required to break a C-C bond ($\approx 347\:\text{kJ/mol}$).
+
+### 3. The Photoelectric Effect
+*Analyze the ejection of electrons using $KE_{electron} = h\nu - \Phi$.*
+1.  **Simple:** A metal has a work function ($\Phi$) of $3.5 \times 10^{-19}\:\text{J}$. What is the minimum "threshold" frequency of light required to eject an electron?
+2.  **Intermediate:** Light with a frequency of $1.0 \times 10^{15}\:\text{Hz}$ strikes the metal from the previous problem. Calculate the kinetic energy of the ejected electron.
+3.  **Advanced (Velocity):** Using the kinetic energy calculated in the Intermediate problem, determine the **velocity** of the ejected electron. *(Mass of an electron $m_e = 9.109 \times 10^{-31}\:\text{kg}$).*
+
+### 4. The Bohr Model
+*Calculate energy transitions in the Hydrogen atom using the Rydberg formula.*
+1.  **Simple:** Calculate the energy of an electron in the ground state ($n=1$) of a Hydrogen atom. (Recall $E_n = -2.178 \times 10^{-18}\:\text{J} \left(\frac{1}{n^2}\right)$).
+2.  **Intermediate:** An electron falls from the $n=3$ energy level to the $n=2$ energy level (part of the Balmer series). Calculate the change in energy ($\Delta E$) and determine if energy is absorbed or emitted.
+3.  **Advanced:** Calculate the wavelength (in nm) of the photon emitted during the transition in the previous problem. Does this correspond to visible light?
+
+### 5. Matter as Waves (De Broglie)
+*Apply the concept of wave-particle duality using $\lambda = \frac{h}{p} = \frac{h}{mv}$.*
+1.  **Simple:** Calculate the De Broglie wavelength of an electron ($mass = 9.11 \times 10^{-31}\:\text{kg}$) moving at $2.0 \times 10^6\:\text{m/s}$.
+2.  **Intermediate (Macroscopic):** Calculate the De Broglie wavelength of a $0.145\:\text{kg}$ baseball thrown at $40.0\:\text{m/s}$. Compare this length to the size of a proton ($\approx 10^{-15}\:\text{m}$) to explain why we don't observe wave behavior in baseballs.
+3.  **Advanced (Acceleration):** An electron is accelerated from rest through a potential difference of $100\:\text{Volts}$, giving it a Kinetic Energy of $100\:\text{eV}$ ($1.602 \times 10^{-17}\:\text{J}$). First, find the velocity, then calculate the wavelength.
+
+### 6. The Uncertainty Principle
+*Explore the limits of measurement using $\Delta x \Delta p \ge \frac{h}{4\pi}$.*
+1.  **Simple:** If the uncertainty in the position of a particle is $\Delta x = 1.0 \times 10^{-10}\:\text{m}$ (approximate size of an atom), what is the minimum uncertainty in its momentum ($\Delta p$)?
+2.  **Intermediate:** An electron is confined to a box of length $1.0\:\text{nm}$. Assuming the uncertainty in position is the size of the box, calculate the minimum uncertainty in its **velocity**.
+3.  **Advanced (Mass Dependence):** Repeat the intermediate calculation for a helium atom ($mass \approx 6.64 \times 10^{-27}\:\text{kg}$) confined to the same $1.0\:\text{nm}$ box. How does the mass of the particle affect the uncertainty in its velocity?
 
 
 

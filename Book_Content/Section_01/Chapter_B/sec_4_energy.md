@@ -52,7 +52,7 @@ questions.add_question(
 )
 display(HTML(questions.render()))
 :::
-#### Electromagnetism
+#### Charged Partciles
 This topic is incredibly deep. We will however, just take a brief look at properties of electric charges and magnetic fields. The first is that like charges repel, and unalike charges attract. We can actually see this if we look at the governing potential energy equation known as Coulomb's law shown in equation {ref}`coulomb_pot`.
 
 :::{math}
@@ -65,7 +65,8 @@ V\left(r\right) = \frac{q_1q_2}{4\pi\epsilon_0 r}
 F\left(r\right) = \frac{q_1q_2}{4\pi\epsilon_0 r^2}
 :::
 
----
+In our equations $q_1$ and $q_2$ are the respective charges in Coulombs ($C$), $\epsilon_0$ is the permitivity of free space and $r$ is the distance between the charges $q_1$ and $q_2$. 
+
 
 ### Energy Transformation and Conservation
 In an **ideal system**, energy is never lost; it only changes form. This is the Law of Conservation of Energy. If we look at a mass oscillating on a spring, we see a constant "trade" between the definitions we established in the [Kinetic](#kinetic) and [Mechanical Potential](#mechanical-potential-the-spring) sections.
