@@ -23,6 +23,58 @@ We will not solve this problem explicit, however, you can find solutions to this
 :::
 
 Recall, from the section on {ref}`trigonometric_identities` that $\sin\left(\theta\right) = 0$ when $\theta = 0,\:\pi,\:2\pi,\:3\pi,\:4\pi\ldots$, but also that the zero should come when $n\pi x = L$ to enforce the second boundary condition. Therefore, there are many but **RESTRICTED** solutions. If we solve {ref}`sin_L_sol` and the zero solutions for $\sin$ we get that $\psi\left(x\right) = N \sin\left(\frac{n\pi x}{L} \right)$. N is something called the normilzation constant and it is something we will determine in the next section.
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+questions = QuestionBlock()
+questions.add_question(
+question_id="sec-02-ch-2-q03",
+question_text="In the Particle in a Box model, the wavefunction must go to zero at the walls ($x=0$ and $x=L$). Why does this 'clamping' of the wavefunction at the boundaries lead directly to the quantization of energy?"
+)
+display(HTML(questions.render()))
+:::
 :::{include} interactive_code/pib_solution_graphic.md
+:::
+
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+questions = QuestionBlock()
+questions.add_question(
+question_id="sec-02-ch-2-q04",
+question_text="Classically, a particle can sit perfectly still at the bottom of a box with zero kinetic energy. Why does the Heisenberg Uncertainty Principle forbid this in the quantum Particle in a Box?"
+)
+display(HTML(questions.render()))
 :::

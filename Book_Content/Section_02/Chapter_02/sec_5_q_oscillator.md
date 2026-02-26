@@ -68,7 +68,32 @@ Without this constant, our "probability budget" would be incorrect, and we would
 * **The Gaussian ($e^{-x^2}$):** This "bell curve" ensures the wavefunction decays to zero as you move away from the center. This is vital for keeping the function **finite** and **well-behaved**, ensuring the particle remains localized near the potential well.
 * **Hermite Polynomials ($H_v$):** These are mathematical functions that dictate the shape of the wave between the boundaries. Specifically, they determine the number of nodes; just like the Particle in a Box, a state with quantum number $v$ will have exactly $v$ nodes.
 * **The "Leaking" Effect:** Unlike the Particle in a Box where the walls were infinite, the quadratic potential is finite. As seen in the interactive plot below, this leads to a non-zero probability that the particle exists beyond the **classical turning points**—a phenomenon where the particle "tunnels" into a region that would be classically impossible to reach.
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+questions = QuestionBlock()
+questions.add_question(
+question_id="sec-02-ch-2-q05",
+question_text="The Quantum Harmonic Oscillator wavefunctions alternate between even and odd symmetry. How does this symmetry influence the calculation of the expectation value for position $\langle x \rangle$ for any state $v$?"
+)
+display(HTML(questions.render()))
+:::
 :::{code-cell} python
 :tags: ["remove-input"]
 :label: interactive_qho_viz_final
@@ -77,7 +102,32 @@ Without this constant, our "probability budget" would be incorrect, and we would
 
 :::{include} interactive_code/qho_turning_points.md
 :::
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+questions = QuestionBlock()
+questions.add_question(
+question_id="sec-02-ch-2-q10",
+question_text="According to the Correspondence Principle, as the quantum number ($n$ or $v$) becomes very large, the quantum probability density should begin to look like classical probability. Describe how the probability density of a high-energy Harmonic Oscillator matches the classical 'turning points' of a vibrating spring."
+)
+display(HTML(questions.render()))
+:::
 ### Quantum Harmonic Oscillator Energy States
 
 The energy of a quantum harmonic oscillator is given by:
@@ -92,7 +142,32 @@ E_v = \left(v + \frac{1}{2}\right)h\nu \quad v = 0, 1, 2, \dots
 2.  **Constant Spacing:** Unlike the PIB where gaps increase with $n$, the energy difference here is constant:
     $$\Delta E = E_{v+1} - E_v = h\nu$$
 
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+questions = QuestionBlock()
+questions.add_question(
+question_id="sec-02-ch-2-q12",
+question_text="In the Harmonic Oscillator, the wavefunction extends slightly into the 'region of negative kinetic energy' (where $V > E$). Classically, the particle is forbidden from being here. What does this 'leakage' of the wavefunction suggest about the probability of finding a particle outside its classical boundaries?"
+)
+display(HTML(questions.render()))
+:::
 
 #### Selection Rules: $\Delta v = \pm 1$
 In order for a molecule to absorb or emit a photon and transition between vibrational states, it must follow specific "selection rules." For an ideal harmonic oscillator, the rule is:
@@ -192,3 +267,29 @@ display(HTML(questions.render()))
 Because the energy spacing $\Delta E$ is constant, this model is the basis for **Infrared (IR) Spectroscopy**. When a molecule absorbs a photon matching $h\nu$, it jumps to the next energy level. Measuring this frequency allows us to determine the bond's "stiffness" or spring constant $k$.
 
 Further and more detailed discussion of infra-red spectroscopy will be saved for {ref}`IR_Raman`.
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+questions = QuestionBlock()
+questions.add_question(
+question_id="sec-02-ch-2-q09",
+question_text="Why must a molecule possess a permanent dipole moment to be 'active' in microwave (rotational) spectroscopy? What is the role of the oscillating electric field of the photon in this process?"
+)
+display(HTML(questions.render()))
+:::

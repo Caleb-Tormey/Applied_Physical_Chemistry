@@ -25,7 +25,32 @@ For a wavefunction to be physically acceptable, it must meet the following four 
 - The "Kink" Problem: If there is a sharp "kink" or "corner" in the wavefunction, the second derivative (which is required to calculate Kinetic Energy in the Schrödinger Equation) becomes undefined at that point.
 - The Exception: The only time a wavefunction is allowed to have a "kink" is at a point where the potential energy ($V$) is infinite (like the walls of our Particle in a Box).
 
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+questions = QuestionBlock()
+questions.add_question(
+question_id="sec-02-ch-2-q01",
+question_text="The wavefunction $\psi$ is often a complex-valued function (containing $i$). Why is it physically necessary to use the product $\psi^*\psi$ to describe probability density, and what property must the resulting integral over all space satisfy?"
+)
+display(HTML(questions.render()))
+:::
 
 ---
 

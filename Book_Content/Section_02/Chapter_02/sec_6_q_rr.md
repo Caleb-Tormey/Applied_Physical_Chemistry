@@ -87,7 +87,32 @@ In the Harmonic Oscillator, the energy levels were equally spaced, resulting in 
 :::{include} interactive_code/rot_spectrum.md
 :::
 
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+questions = QuestionBlock()
+questions.add_question(
+question_id="sec-02-ch-2-q08",
+question_text="In the Rigid Rotator model, we assume the bond length $r$ is fixed. If the angular momentum is quantized, why must the energy levels become increasingly spaced further apart as the quantum number $J$ increases, unlike the evenly spaced levels of the Harmonic Oscillator?"
+)
+display(HTML(questions.render()))
+:::
 ---
 
 ## Tying it All Together: From Postulates to Models
@@ -112,7 +137,32 @@ These models are not just mathematical exercises; they are the "standard rulers"
 | **Energy $E$** | $E_n = \frac{n^2 h^2}{8mL^2}$ | $E_v = (v + \frac{1}{2})h\nu$ | $E_{J} = \frac{J^2 \hbar^2}{2I}$ |
 | **Energy Spacing** | Increases with $n$ | **Constant** ($\Delta E = h\nu$) | Increases with $J$ |
 | **Zero-Point Energy?** | Yes ($E_1 > 0$) | Yes ($E_0 = \frac{1}{2}h\nu$) | **No** ($E_0 = 0$) |
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+questions = QuestionBlock()
+questions.add_question(
+question_id="sec-02-ch-2-q09",
+question_text="Why must a molecule possess a permanent dipole moment to be 'active' in microwave (rotational) spectroscopy? What is the role of the oscillating electric field of the photon in this process?"
+)
+display(HTML(questions.render()))
+:::
 ### What’s Next?
 
 We have successfully used the postulates to solve for "ideal" model systems. However, chemistry is ultimately the study of atoms. In the next chapter, we will take the lessons learned from the **Rigid Rotator** and apply them to the first "real" physical system: the **Hydrogen Atom**. By placing a single electron in a three-dimensional spherical potential, we will finally see where the $s, p, d,$ and $f$ orbitals—the fundamental shapes of chemistry—actually come from.

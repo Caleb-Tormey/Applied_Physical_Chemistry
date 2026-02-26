@@ -62,3 +62,30 @@ Is $f(x) = x^2$ an eigenfunction of the derivative operator $\frac{d}{dx}$?
 3. **Conclusion:** No, $x^2$ is not an eigenfunction of this operator.
 
 In chemistry, we are constantly hunting for wavefunctions that are eigenfunctions of the Hamiltonian, because those functions represent the stable energy states (orbitals) of atoms and molecules.
+
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+questions = QuestionBlock()
+questions.add_question(
+question_id="sec-02-ch-2-q02",
+question_text="If a wavefunction is an eigenfunction of an operator (like the Hamiltonian), a single measurement will always return the same eigenvalue. However, if it is NOT an eigenfunction, we must use an expectation value. Conceptually, what does the expectation value represent in terms of multiple measurements?"
+)
+display(HTML(questions.render()))
+:::
