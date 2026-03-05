@@ -1,21 +1,114 @@
 ## Particle in a Box
 
-The model we use to play understand behavior and consequences of quantum systems and specifically Schrödinger's equation is the **Particle in a Box** (PIB). It is important to note that the PIB problem is a good starting place, however, there are aspects of it that are idealized. We will be able to apply it to some real systems but in order to have it match correctly will require work beyond the scope of this course. 
+The model we use to understand the behavior and consequences of quantum systems, specifically the Schrödinger equation, is the **Particle in a Box** (PIB). It is important to note that the PIB problem is a good starting place; however, there are aspects of it that are idealized. We will be able to apply it to some real systems, but making it match perfectly often requires work beyond the scope of this course. 
 
-Here is the system. We will have a particle, we could use an electron, and we are going to confine it to live in a box. What does it mean to live in a box? What we are going to do is create a potential energy in which the boundaries of the box are infinite energy (not realistic but a good first approximation) and the inside of the box has no energy. So it is inside a square potential and therefore a particle. 
+[Image of a 1D Particle in a Box potential well with infinite walls]
 
-Ok so now we have an electron in a little energy well. Where does the quantum mechanics come in? Well do understand how the electron behaves we must use Schrödinger's equation.  
+Here is the system. We will have a particle, say an electron, and we are going to confine it to live in a 1D "box" of length $L$. What does it mean to live in a box? We are going to create a potential energy environment in which the boundaries of the box (the walls) have infinite potential energy (not completely realistic, but a good first approximation) and the inside of the box has absolutely zero potential energy. It is inside a square potential well. 
 
-Our particle must behave according to the rules of the Schrödinger's equation as well as the boundary conditions that define our system. For our example, those rules are that the electron is **NOT** allowed to ever be outside the box. How do we say that mathematically? We will define our wavefunction, $\psi$, in such a way that it will be equal to zero when the position of the electron, defined by $x$ is not within the boundary of the box. 
+So now we have an electron in a little energy well. Where does the quantum mechanics come in? To understand how the electron behaves, we must use the Schrödinger equation.  
 
-So what about when the electron is in the box? When $0\ge x \le L$ we will use equation {ref}`TISE` and equation {ref}`1D_Hamiltonian` where, $V \left (x,t\right) = 0. If we write this out we get equation {ref}`1D_PIB_SE` 
+Our particle must behave according to the rules of the Schrödinger equation as well as the **boundary conditions** that define our system. For our example, those rules are that the electron is physically **NOT** allowed to ever be outside the box or in the walls. How do we say that mathematically? We define our wavefunction, $\psi$, in such a way that it will be exactly zero when the position of the electron, defined by $x$, is not strictly within the boundaries of the box. 
+
+So what about when the electron *is* in the box? When $0 \le x \le L$, we will use equation {ref}`TISE` and equation {ref}`1D_Hamiltonian` where $V(x,t) = 0$. If we write this out, we get equation {ref}`1D_PIB_SE`:
 
 :::{math}
 :label: 1D_PIB_SE
--\frac{\hbar^2}{2m}\frac{d^2\psi \left(x\right)}{d x^2} = E\psi\left(x\right)
+-\frac{\hbar^2}{2m}\frac{d^2\psi(x)}{dx^2} = E\psi(x)
 :::
 
-We will not solve this problem explicit, however, you can find solutions to this equation in any physical chemistry text. Rather let's look for clues about what the solution should look like. Equation {ref}`1D_PIB_SE` is a second order differential equation. With differential equations rather than solving for a value like you have in the past you solve it for an entire function! So we want to determine what function of $x$, that we are calling $\psi$ will satisfy the equation. Well what does the equation say? It says that whatever function $\psi$ is we have to be able to take the second derivative of it with respect to $x$, multiply it by $-\frac{\hbar^2}{2m}$, and get a solution that looks like the original function, $\psi$ multiplied by an energy term. Well what kind of functions can you take second derivatives of and get back out something that resembles the original function? If we go back to section {ref}`math_derivatives` we will see that there are two possibilities. The first is an exponential. Recall that $\frac{d^2 e^{ax}}{dx^2} = a^2e^{ax}$. The other possibility would be $\sin x$ and $\cos x$. Recall that $\frac{d^2\sin x}{dx^2}= -\sin x$ and $\frac{d^2\cos x}{dx^2}= -\cos x$. So which solution makes the most sense? Let's look at other information in the problem. Recall, the boundary conditions earlier required that the wavefunction be zero at the wall of the box ($0$ and $L$). We cannot make the exponential function zero at any point, so that will be out. Both the $\sin$ and $\cos$ functions can be zero at certain points. Here is where our choice of coordinates matters. When $x = 0$ we know that $\psi(x) = 0$, so which of the two trig functions satisfies these criteria? The answer is $\sin$ as $\cos\left(0\right)= 1$. So we know that the function's general formula will look like $\sin\left(x\right)$ but we don't know any details. Here we require the other boundary condition. In this case that boundary condition is that the When $x = L$,that is also $\psi(x) = 0$. Here is where we will start to see where quantum mechanics solutions look different from the classical analog. If we want to solve for this problem we can set it up in equation {ref}`sin_L_sol`.
+We will not solve this differential equation completely from scratch—you can find the rigorous mathematical solutions to this equation in any advanced physical chemistry text. Rather, let's look for clues about what the solution should look like conceptually. 
+
+Equation {ref}`1D_PIB_SE` is a second-order differential equation. With differential equations, rather than solving for a single numerical value like you have in algebra, you solve it for an entire function! We want to determine what function of $x$, which we are calling $\psi$, will satisfy the equation. 
+
+What does the equation actually say? It says that whatever function $\psi$ is, we have to be able to take the second derivative of it with respect to $x$, multiply it by $-\frac{\hbar^2}{2m}$, and get a solution that looks exactly like the original function $\psi$ multiplied by an energy constant $E$. 
+
+What kind of functions can you take the second derivative of and get back something that resembles the original function? If we go back to section {ref}`math_derivatives`, we will see that there are two main possibilities. The first is an exponential. Recall that $\frac{d^2}{dx^2}(e^{ax}) = a^2e^{ax}$. The other possibility would be the trigonometric functions $\sin(x)$ and $\cos(x)$. Recall that $\frac{d^2}{dx^2}\sin(x) = -\sin(x)$ and $\frac{d^2}{dx^2}\cos(x) = -\cos(x)$. 
+
+So which solution makes the most sense physically? Let's look at the other information in the problem. Recall the boundary conditions earlier required that the wavefunction be exactly zero at the walls of the box ($x=0$ and $x=L$). We cannot make the standard exponential function reach zero at these specific finite points, so that is out. Both the sine and cosine functions, however, repeatedly cross zero. 
+
+Here is where our choice of coordinates matters. At the left wall, $x = 0$, we know that $\psi(0) = 0$. Which of the two trig functions satisfies this criterion? The answer is sine, because $\sin(0) = 0$, whereas $\cos(0) = 1$. So we know that the function's general formula will look like a sine wave, but we don't yet know the specifics of its frequency or amplitude. Let's write out our general guess in equation {ref}`sin_L_sol`:
+
+:::{math}
+:label: sin_L_sol
+\psi(x) = A\sin(kx)
+:::
+
+Here, $A$ is a constant representing the amplitude of the wave, and $k$ is a constant related to the wave's frequency. 
+
+### Applying the Second Boundary Condition
+
+To figure out what $k$ is, we must apply our second boundary condition. At the right wall, $x = L$, the wavefunction must also be zero, meaning $\psi(L) = 0$. 
+
+If we plug $L$ into our general equation:
+$A\sin(kL) = 0$
+
+For this to be true, either $A = 0$ or $\sin(kL) = 0$. If $A = 0$, then the entire wavefunction is zero everywhere, which means the particle doesn't exist! Since we know we have an electron in the box, $A$ cannot be zero. Therefore, $\sin(kL)$ must be zero.
+
+When does a sine function equal zero? When the inside of the function is an integer multiple of $\pi$ (i.e., $\pi$, $2\pi$, $3\pi$, etc.). We can write this mathematically as:
+
+:::{math}
+:label: k_quantization
+kL = n\pi
+:::
+
+Where $n = 1, 2, 3, \dots$ (Notice $n$ cannot be 0, because then $k=0$, and again, the whole wavefunction would vanish). 
+
+If we rearrange equation {ref}`k_quantization` to solve for $k$, we get $k = \frac{n\pi}{L}$. We can now plug this back into our general wavefunction to get the exact, mathematical description of our electron in the box:
+
+:::{math}
+:label: PIB_wavefunction
+\psi_n(x) = A\sin\left(\frac{n\pi x}{L}\right)
+:::
+
+[Image of the first three wavefunctions and probability densities for a particle in a 1D box]
+
+*Note: The constant $A$ is simply a normalization factor to ensure total probability equals 1. For a 1D box, it turns out to be $\sqrt{2/L}$, but we will focus primarily on the sine portion here.*
+
+### Deriving the Energy 
+
+Now for the grand finale. We have our wavefunction, $\psi_n(x)$. How much energy does this electron have? To find out, we simply plug our new wavefunction back into the original Schrödinger equation {ref}`1D_PIB_SE` and solve for $E$.
+
+First, let's take the first derivative of $\psi_n(x)$ with respect to $x$:
+$\frac{d\psi}{dx} = A \left(\frac{n\pi}{L}\right) \cos\left(\frac{n\pi x}{L}\right)$
+
+Now, let's take the second derivative:
+$\frac{d^2\psi}{dx^2} = -A \left(\frac{n\pi}{L}\right)^2 \sin\left(\frac{n\pi x}{L}\right)$
+
+Notice that the chunk $A\sin\left(\frac{n\pi x}{L}\right)$ is just our original wavefunction, $\psi_n(x)$! So we can simplify the second derivative to:
+$\frac{d^2\psi}{dx^2} = -\left(\frac{n^2\pi^2}{L^2}\right)\psi_n(x)$
+
+Now, let's plug this second derivative back into the full Schrödinger equation {ref}`1D_PIB_SE`:
+$-\frac{\hbar^2}{2m} \left[ -\left(\frac{n^2\pi^2}{L^2}\right)\psi_n(x) \right] = E\psi_n(x)$
+
+The negative signs cancel out. Furthermore, because $\psi_n(x)$ is on both sides of the equation, we can divide it out completely! This leaves us with an exact equation for the energy, $E$:
+
+:::{math}
+:label: PIB_Energy_hbar
+E_n = \frac{n^2 \pi^2 \hbar^2}{2 m L^2}
+:::
+
+Because physical chemists often prefer working with Planck's constant ($h$) instead of the reduced Planck's constant ($\hbar = \frac{h}{2\pi}$), we can substitute that in. Squaring $\hbar$ gives $\frac{h^2}{4\pi^2}$. The $\pi^2$ terms cancel out, leaving us with the final, famous equation for the energy of a particle in a 1D box:
+
+:::{math}
+:label: PIB_Energy_Final
+E_n = \frac{n^2 h^2}{8 m L^2}
+:::
+
+You might be looking ahead and wondering if we are going to perform this exact same mathematical gymnastics for every single quantum model we encounter. The short answer is: no, we are not.
+
+The Particle in a Box is the simplest possible quantum mechanical system. We walked through its complete derivation because it is an incredibly powerful exercise. It proves, without a shadow of a doubt, that **quantization is not a magic rule we just invented; it is a natural mathematical consequence of placing a wave inside a physical boundary.** As we move forward to more complex, realistic models—like the **Harmonic Oscillator** (which models vibrating molecular bonds), the **Rigid Rotor** (which models tumbling molecules), or the **Hydrogen Atom** (which gives us our actual 3D atomic orbitals)—the math becomes significantly more intense. Solving the Schrödinger equation for those systems requires advanced differential equations, Hermite polynomials, and spherical harmonics. 
+
+While mathematically beautiful, slogging through that level of rigorous calculus is beyond the scope of this conceptual course. Our goal is not to get lost in the mathematical weeds, but to understand the physical chemistry. From here on out, we will skip most of the grueling derivations and focus directly on the *results* of the Schrödinger equation. We will typically look at the final energy equations, the physical shapes of the resulting wavefunctions, and most importantly, how we can apply those quantum results to understand real chemical and biochemical systems.
+### The Consequences: Quantization is Born
+
+Look closely at equation {ref}`PIB_Energy_Final`. The mass of the electron ($m$) is constant. The size of the box ($L$) is constant. Planck's constant ($h$) is constant. 
+
+The *only* thing that can change the energy of the electron is $n$, which we defined earlier as an integer ($1, 2, 3, \dots$). 
+
+Because $n$ can only be whole numbers, **the energy of the electron can only exist at specific, discrete levels.** It cannot have an energy of $1.5$ or $2.7$. This is the very definition of **quantization**. By simply enforcing a physical boundary condition (the walls of the box), the mathematics of the wave forced the energy to become quantized. 
+
+Furthermore, notice what happens when $n=1$ (the lowest possible state). The energy is *not zero*. Because $n$ cannot be zero, an electron confined to a space must always possess some minimum amount of kinetic energy,
 
 :::{math}
 :label: sin_L_sol

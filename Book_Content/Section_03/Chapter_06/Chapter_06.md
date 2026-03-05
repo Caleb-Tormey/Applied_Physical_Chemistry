@@ -31,6 +31,7 @@ try:
 except Exception as e:
     print(f"Error setting project path: {e}")
 :::
+(chapter_intermolecular_forces) = 
 # Chapter 6: Intermolecular Forces
 
 ## Non-covalent Interactions

@@ -33,26 +33,23 @@ except Exception as e:
 :::
 # Chapter 4: Chemical Bonding and Molecular Orbitals
 
+:::{include} sec_1_introduction_to_bonding.md
+:::
+:::{include} sec_2_lewis_vsepr.md
+:::
+:::{include} sec_3_vb_theory.md
+:::
+:::{include} sec_4_hybrid.md
+:::
+:::{include} sec_5_MO.md
+:::
+:::{include} sec_6_MO_poly.md
+:::
 
-It is important to mention here that when we are discussing different types of theories about chemical bonds that many parts of the different theories will overlap or share words or pictures. This can lead to some confusion about conclusions that each theory will draw or assumptions that are made. Please pay special attention to the assumptions each theory is making. 
-
-In general what is bonding? In the most simplistic case bonding is 
-
-Ionic bonding
-## Lewis Theory and VSEPR
-Covalent bonding
-## Valence Bond Theory
-Like Lewis theory we will have localized electrons. W
-You are likely already familiar with valence bond 
-
-**question. explain why water and methane are difficult to make fit in the valence bond theory framework. 
 
 
-## Hybrid Orbital Theory
 
-As we saw at the end of the last section there are limitations to valence bond theory. Most importantly that we often do not have the correct number of half filled orbitals to account for the number of bonds. Also, using just the $s$ and $p$ orbitals we cannot account for shapes that don't have $90\degree$ or $180\degree$ angles. 
 
-From general chemistry we have been told to look at the VSPER group and then determine the extent of hybridization. For example, in something with four electron groups (bonds or lone pairs) around a central atom in a Lewis structure, for example water or methane (see image....) you would hybridize one $2s$ orbital with three $2p$ orbitals to make four $sp^3$ hybridized orbitals. These will have, as a consequence, the correct tetrahedral shape and the correct bond angles (though they may be larger or smaller depending on lone pairs). We haven't discussed where this comes from though. 
 
 The **Conceptual Question** comment is left in to make it easier to find in the markdown. 
 :::{code-cell}
