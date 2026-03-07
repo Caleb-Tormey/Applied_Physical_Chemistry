@@ -32,8 +32,9 @@ except Exception as e:
     print(f"Error setting project path: {e}")
 :::
 # Chapter 5: Molecular Symmetry and Spectroscopy
-Blah blah blah
-:::{include} part1-Intro_mol_sym.md
+:::{include} sec_1_introduction_mol_symmetry.md 
+:::
+:::{include} sec_2_point_groups.md
 :::
 %## Introduction to Molecular Symmetry Elements
 %```markdown

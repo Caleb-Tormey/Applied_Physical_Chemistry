@@ -96,4 +96,44 @@ display(HTML(manager.render()))
 
 ## Practice Problems
 
-You are free to do none, some or all these problems as you see fit. They would be very helpful to use in studying for the chapter exams.
+You are free to do none, some, or all of these problems as you see fit. They are designed to mimic the conceptual reasoning and physical applications you will encounter in the rest of the book and in your future biochemistry courses.
+
+### 1. The Nature of the Chemical Bond and Energy
+*Challenge the common misconceptions about bond energy and thermodynamic stability.*
+
+1. **Simple:** A biology textbook states, "The breaking of the high-energy phosphate bond in ATP releases energy to power cellular processes." Based on Section 4.1, explain why this statement is physically incorrect. Where does the released energy actually come from?
+2. **Intermediate:** Look at a standard potential energy curve for a diatomic molecule. What physical forces dictate the steep repulsive curve at very short internuclear distances, and what forces define the attractive curve at longer distances? 
+3. **Advanced:** The average kinetic (thermal) energy of molecules in a human cell at 37°C is relatively low. If a specific drug-receptor interaction relies solely on a very shallow potential energy well (weak bonding), what will happen to that drug-receptor complex in the chaotic, warm environment of the cell?
+
+### 2. VSEPR, 3D Geometry, and Polarity
+*Translate 2D bookkeeping into 3D shapes and predict macroscopic intermolecular forces.*
+
+1. **Simple:** Using AXE notation, determine the electron geometry and molecular geometry for Carbon Dioxide (CO₂) and Sulfur Dioxide (SO₂). Why do they have different bond angles despite both having two oxygen atoms bonded to a central atom?
+2. **Intermediate:** Look at the structure of a lipid molecule in a cell membrane. The hydrocarbon tail is entirely composed of tetrahedral (AX₄) carbon atoms. Why is this tail considered nonpolar and hydrophobic, even though the individual C-H bonds have a slight dipole?
+3. **Advanced (Formal Charge & Stability):** The thiocyanate ion (SCN⁻) can be drawn using three different resonance structures. Draw them, assign formal charges to each atom in all three structures, and use those charges to predict which structure contributes most to the actual localized physical state of the ion.
+
+### 3. Valence Bond Theory and Hybridization
+*Apply the LCAO mathematical workaround to solve the geometry problem of localized bonds.*
+
+1. **Simple:** If a carbon atom attempted to bond with hydrogen using only its native, unhybridized ground-state atomic orbitals ($2s$ and $2p$), what molecule would it form, and what would the bond angles be? 
+2. **Intermediate:** Identify the hybridization state ($sp$, $sp^2$, or $sp^3$) of every carbon, nitrogen, and oxygen atom in the amino acid Glycine (NH₂-CH₂-COOH). 
+3. **Advanced:** In Section 4.4, we established that the peptide bond linking amino acids is $sp^2$ hybridized. 
+    * (a) Explain how the unhybridized $p$ orbitals on the carbon and nitrogen interact.
+    * (b) Why does this specific quantum mechanical interaction completely restrict rotation around the peptide bond, and why is this vital for protein folding?
+
+### 4. Molecular Orbital Theory: Diatomics
+*Abandon the localized assumption to explain the electronic and magnetic reality of molecules.*
+
+1. **Simple:** What is the physical difference between constructive interference and destructive interference when combining two 1s atomic wavefunctions? How does this relate to the concept of a node in an antibonding orbital?
+2. **Intermediate:** Draw the Lewis structure for diatomic oxygen (O₂). Does this localized model predict that oxygen is diamagnetic or paramagnetic? Now, look at the MO diagram for O₂. How does Hund's rule applied to the degenerate $\pi^*$ orbitals correctly predict the experimental magnetic behavior of the molecule?
+3. **Advanced (Superoxide):** In biochemistry, oxidative stress is often caused by the "superoxide" radical, O₂⁻. 
+    * (a) Using the MO diagram for neutral O₂, add one extra electron to create the O₂⁻ diagram. 
+    * (b) Calculate the bond order for neutral O₂ and the superoxide O₂⁻. (Bond Order = [Bonding Electrons - Antibonding Electrons] / 2). 
+    * (c) Based on your calculation, is the bond in superoxide stronger or weaker than in neutral oxygen?
+
+### 5. Polyatomics and Biochemical Applications
+*Connect frontier molecular orbitals to the colors of life and molecular toxicity.*
+
+1. **Simple:** Define the terms HOMO and LUMO. Why are these specific molecular orbitals considered the "frontier" of chemical reactivity?
+2. **Intermediate:** Ethanol (drinking alcohol) and beta-carotene (the pigment in carrots) are both organic molecules. Ethanol absorbs high-energy UV light and is colorless, while beta-carotene absorbs lower-energy visible light and appears orange. Use the concept of delocalized conjugated $\pi$ systems and the HOMO-LUMO gap to explain this difference.
+3. **Advanced:** Carbon monoxide (CO) is a lethal poison because it binds to the iron (Fe) in hemoglobin much tighter than O₂ does. Describe the "push-pull" orbital interaction that causes this. Specifically, identify which orbital on CO acts as the electron donor ($\sigma$ donation) and which empty orbital acts as the electron acceptor ($\pi$ backbonding).
