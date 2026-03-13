@@ -32,7 +32,35 @@ It captures the physics of where the electron density is concentrated and where 
 
 
 So, while we must remember its limitations, Lewis theory remains an incredibly powerful tool for mapping the electrostatic "hotspots" that drive chemical reactions.
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions = QuestionBlock()
+
+questions.add_question(
+    question_id="sec-03-ch-4-q02",
+    question_text=r"Lewis theory and VSEPR are built entirely on the 'localized electron assumption.' While this is a massive simplification of quantum mechanics, explain how organic chemists still use this simple 2D model to accurately predict the physical flow of electrons using concepts like formal charge and arrow-pushing mechanisms."
+)
+
+display(HTML(questions.render()))
+:::
 ### VSEPR: Translating 2D to 3D via Electrostatics
 
 To figure out the actual 3D shape of a molecule, we pair Lewis theory with VSEPR. The fundamental physical principle behind VSEPR is incredibly simple: **Coulombic repulsion**. 

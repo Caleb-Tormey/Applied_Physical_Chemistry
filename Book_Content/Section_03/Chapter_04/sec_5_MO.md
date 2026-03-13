@@ -11,7 +11,40 @@ To explain these phenomena, we must abandon the localized model entirely. We mus
 The core premise of MO theory is profound but simple: **electrons do not belong to individual atoms or specific bonds; they belong to the entire molecule.**
 
 When atoms come together to form a molecule, their atomic orbitals completely lose their individual identities. Instead of just overlapping a little bit at the edges (like in Valence Bond theory), the atomic wavefunctions of all the atoms combine to form entirely new, delocalized wavefunctions that stretch across the entire molecule. We call these new wavefunctions **molecular orbitals**.
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions = QuestionBlock()
+
+questions.add_question(
+    question_id="sec-03-ch-4-q07",
+    question_text=r"Both Hybrid Orbital Theory and Molecular Orbital (MO) Theory utilize the Linear Combination of Atomic Orbitals (LCAO) mathematical technique. What is the fundamental physical difference in *which* atomic orbitals are being combined in these two theories?"
+)
+
+
+
+
+
+
+display(HTML(questions.render()))
+:::
 ### Constructing MOs: LCAO-MO
 
 To mathematically construct these molecular orbitals, we use the exact same trick we used for hybrid orbitals: the **Linear Combination of Atomic Orbitals (LCAO)**. 
@@ -23,7 +56,34 @@ Let's look at the simplest possible molecule: diatomic hydrogen (H₂). We have 
 1.  **Constructive Interference (In-Phase):** The two wavefunctions add together. This builds up a massive amount of electron density directly between the two positively charged nuclei. The nuclei are highly attracted to this dense negative cloud, which acts as a strong glue, dropping the system into a deep potential energy well. This creates a **bonding molecular orbital**, which is *lower* in energy than the original atomic orbitals.
 2.  **Destructive Interference (Out-of-Phase):** One wavefunction is mathematically subtracted from the other. They cancel each other out exactly halfway between the nuclei, creating a **node** (a region of zero electron density). With no electron "glue" between them, the two positively charged nuclei fiercely repel each other. This creates an **antibonding molecular orbital**, denoted with an asterisk (*). It is significantly *higher* in energy than the original atomic orbitals.
 
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions = QuestionBlock()
+
+questions.add_question(
+    question_id="sec-03-ch-4-q08",
+    question_text=r"When two 1s atomic orbitals combine to form molecular orbitals, they undergo constructive and destructive interference. Explain why the resulting antibonding orbital ($\sigma^*$) is significantly higher in energy than the original atomic orbitals, referencing the physical location of the nuclei and the electron density."
+)
+display(HTML(questions.render()))
+:::
 
 Just like with hybridization, we must obey the **law of conservation of orbitals**. We put two atomic orbitals in (one 1*s* from each hydrogen), so we get exactly two molecular orbitals out: one bonding and one antibonding.
 
@@ -57,7 +117,34 @@ However, if you pour liquid oxygen between the poles of a strong magnet, it stic
 
 Let's look at the Molecular Orbital diagram for O₂. 
 
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions = QuestionBlock()
+
+questions.add_question(
+    question_id="sec-03-ch-4-q09",
+    question_text=r"If you draw a valid Lewis structure for $O_2$, it predicts that all electrons are perfectly paired. Explain how Molecular Orbital Theory successfully predicts the experimentally observed paramagnetism of liquid oxygen by utilizing Hund's rule and degenerate orbitals."
+)
+display(HTML(questions.render()))
+:::
 
 When the 2*p* orbitals of the two oxygen atoms combine, they form a $\sigma$ bonding orbital, two degenerate $\pi$ bonding orbitals, two degenerate $\pi^*$ antibonding orbitals, and a $\sigma^*$ antibonding orbital. 
 

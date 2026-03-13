@@ -33,7 +33,34 @@ If a molecule absorbs a photon of light, an electron jumps from the HOMO up to t
 However, as you link more and more atoms together into a delocalized conjugated system, the energy levels of the MOs get squeezed closer and closer together. The HOMO-LUMO gap shrinks. Eventually, the gap becomes small enough that the molecule can absorb lower-energy **visible light**. 
 
 This is the quantum mechanical basis for vision and photosynthesis. The molecule **retinal** in your eyes and the **chlorophyll** in plant leaves are both massive conjugated $\pi$ systems. Their delocalized molecular orbitals are specifically tuned to have a HOMO-LUMO gap that perfectly matches the energy of visible light photons. 
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions = QuestionBlock()
+
+questions.add_question(
+    question_id="sec-03-ch-4-q10",
+    question_text=r"Small organic molecules like ethanol are colorless because they only absorb high-energy UV light. Explain how extending a highly delocalized, conjugated $\pi$ system (like in chlorophyll or retinal) alters the HOMO-LUMO gap, allowing the molecule to interact with visible light."
+)
+display(HTML(questions.render()))
+:::
 ### Frontier Orbitals in Action: The Hemoglobin Problem
 
 Let's look at one final, critical biochemical example where localized theories completely fail, and MO theory saves the day: carbon monoxide (CO) poisoning.
@@ -51,3 +78,31 @@ Carbon monoxide is lethally toxic because it binds to that exact same iron atom 
 This creates a synergistic push-pull cycle. The CO pushes electrons onto the iron (sigma donation), and the iron pushes electrons right back into the CO (pi-backbonding). This creates an exceptionally strong, almost unbreakable bond. 
 
 If you only used Lewis structures, you would never know that CO has empty $\pi^*$ orbitals perfectly shaped to accept electrons from a transition metal. Only Molecular Orbital theory reveals the hidden quantum architecture that makes CO so deadly.
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions = QuestionBlock()
+
+questions.add_question(
+    question_id="sec-03-ch-4-q11",
+    question_text=r"Carbon monoxide (CO) is exceptionally toxic because it binds to the iron in hemoglobin roughly 200 times tighter than oxygen does. Describe the synergistic 'push-pull' mechanism of this interaction, specifically identifying the roles of $\sigma$-donation and $\pi$-backbonding between the frontier orbitals of CO and Iron."
+)
+display(HTML(questions.render()))
+:::

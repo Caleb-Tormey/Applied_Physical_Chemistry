@@ -16,6 +16,34 @@ A chemical bond forms when the attractive forces outweigh the repulsive forces, 
 
 To be truly "bound," the atoms must be deep enough in this well to withstand the chaotic environment around them. In a biological cell at 37°C, molecules are constantly colliding, vibrating, and jostling. If the energy well is too shallow, a simple collision will knock the atoms right out of the well, breaking the bond. A stable bond means the atoms can be jostled around, vibrating back and forth, but gravity (in the form of electrostatic attraction) always pulls them back to the lowest energy state at the bottom of the well.
 
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions = QuestionBlock()
+
+questions.add_question(
+    question_id="sec-03-ch-4-q01",
+    question_text=r"A common phrase in introductory biology is that 'breaking the high-energy phosphate bond in ATP releases energy to power the cell.' Based on the physics of the potential energy well, explain why this statement is fundamentally backward, and describe where the energy from ATP hydrolysis actually comes from."
+)
+display(HTML(questions.render()))
+:::
 ### Why Do We Need So Many Theories?
 
 If bonding boils down to electrostatics and quantum mechanics, you might be wondering why this chapter outlines four different theories (Lewis, Valence Bond, Hybrid Orbital, and Molecular Orbital theory). Why don't we just use the "correct" one?

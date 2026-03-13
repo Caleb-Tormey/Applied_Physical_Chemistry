@@ -44,3 +44,4 @@ We run into the exact same problem with water (H₂O). Oxygen's valence configur
 Strict Valence Bond theory fails here because it makes a massive assumption: **it assumes that atoms use their native, unadulterated atomic orbitals to form bonds in molecules.** Remember that the *s*, *p*, and *d* orbitals are the mathematical solutions to the Schrödinger equation for an *isolated* atom floating alone in a vacuum. Once an atom is dropped into a molecular environment surrounded by other atoms, those native orbitals are no longer the lowest-energy way to arrange electron density. The atomic orbitals simply don't point in the right directions to minimize electrostatic repulsion and maximize overlap. 
 
 To fix this geometry problem while keeping the localized overlap concept of Valence Bond theory, we have to invent a mathematical workaround. We have to mix those native orbitals together.
+
