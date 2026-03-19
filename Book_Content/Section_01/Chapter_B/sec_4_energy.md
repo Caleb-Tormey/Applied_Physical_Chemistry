@@ -52,6 +52,7 @@ questions.add_question(
 )
 display(HTML(questions.render()))
 :::
+(sec_physics-coulomb)=
 #### Charged Partciles
 This topic is incredibly deep. We will however, just take a brief look at properties of electric charges and magnetic fields. The first is that like charges repel, and unalike charges attract. We can actually see this if we look at the governing potential energy equation known as Coulomb's law shown in equation {ref}`coulomb_pot`.
 
