@@ -43,14 +43,68 @@ What happened to the other 10 water molecules? **They are set free.**
 They are released from the rigid cage back into the chaotic, tumbling bulk liquid. This massive release of trapped water molecules causes a massive explosion of **Entropy**. 
 
 This is the true definition of the Hydrophobic Effect: **Nonpolar molecules aggregate in aqueous solution not because they love each other, but because their aggregation frees trapped water molecules, massively increasing the entropy of the universe.** It is an entropically driven phenomenon, not an electrostatic one.
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch6 = QuestionBlock()
+
+questions_ch6.add_question(
+    question_id="sec-03-ch-6-q07",
+    question_text=r"True or False: Oil separates from water because the nonpolar oil molecules actively repel the polar water molecules. (If false, identify the actual electrostatic force that exists between them)."
+)
+display(HTML(questions_ch6.render()))
+:::
 ### Biochemical Relevance: The Architecture of the Cell
 
 This entropic effect is the invisible hand guiding all of biology.
 
 * **Lipid Bilayers:** When a cell synthesizes phospholipids (molecules with a polar head and a long nonpolar tail), it doesn't have to spend any energy assembling them into a cell membrane. The water in the cell simply forces the nonpolar tails to clump together away from the water to maximize its own entropy. The lipid bilayer self-assembles spontaneously!
 * **Protein Folding:** When a ribosome synthesizes a new protein, it comes out as a long, floppy string of amino acids. Some of these amino acids are polar, and some are nonpolar (hydrophobic). In a fraction of a second, the water surrounding the protein forces all the nonpolar amino acids to collapse into a tight ball in the very center of the protein, leaving the polar amino acids on the outside to interact with the water. This "hydrophobic collapse" is the primary driving force behind the 3D folding of every functional enzyme in your body.
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch6 = QuestionBlock()
+
+questions_ch6.add_question(
+    question_id="sec-03-ch-6-q08",
+    question_text=r"When two nonpolar proteins bump into each other in the cytosol and aggregate, their total nonpolar surface area decreases. How does this specific decrease in surface area lead to a massive, favorable increase in the entropy of the surrounding water?"
+)
+display(HTML(questions_ch6.render()))
+:::
 ### Looking Ahead: The Rules of Thermodynamics
 
 In this chapter, we saw how the physical state of a biological system is governed by a tug-of-war between attractive intermolecular forces (Enthalpy) and the chaotic tumbling and freedom of the molecules (Entropy). 

@@ -58,7 +58,34 @@ Imagine the two hydrogens on the right side of the molecule stretching *away* fr
 * **Raman Analysis:** As the right side of the molecule stretches and expands its electron cloud, the left side compresses, canceling out the overall change in "squishiness." The net polarizability remains relatively constant. This vibration is **Raman Inactive**. 
 
 By simply knowing the symmetry of ethylene, we can predict exactly which peaks will show up on which laboratory instrument!
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch5 = QuestionBlock()
+
+questions_ch5.add_question(
+    question_id="sec-03-ch-5-q05",
+    question_text=r"You are watching a simulation of a generic diatomic molecule vibrating. As the bond stretches, the electron cloud does not change shape or size, but the center of positive charge shifts away from the center of negative charge. Will this vibration be visible on an IR spectrometer, a Raman spectrometer, or both?"
+)
+display(HTML(questions_ch5.render()))
+:::
 ### Biochemical Relevance: The Water Problem
 
 Why do biochemists care about Raman spectroscopy if IR gives us similar vibrational information? The answer is water. 

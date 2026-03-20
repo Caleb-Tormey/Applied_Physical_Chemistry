@@ -63,3 +63,32 @@ Benzene has an inversion center. If you draw a line from the top-right carbon, t
 The final element is a two-step combination move. An improper rotation ($S_n$) consists of a rotation by $\frac{360^\circ}{n}$, followed immediately by a reflection through a plane *perpendicular* to that rotation axis. 
 
 Methane (CH₄) is a classic example. If you rotate methane by 90° ($C_4$) it does *not* look the same. But if you immediately reflect it across a horizontal plane, the hydrogens perfectly overlap with their original positions. Therefore, methane possesses an $S_4$ axis.
+
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch5 = QuestionBlock()
+
+questions_ch5.add_question(
+    question_id="sec-03-ch-5-q01",
+    question_text=r"You are holding a perfectly symmetrical coffee mug (ignoring the handle). Does the physical axis running down the center of the mug represent a symmetry *element* or a symmetry *operation*? What is the operation?"
+)
+display(HTML(questions_ch5.render()))
+:::

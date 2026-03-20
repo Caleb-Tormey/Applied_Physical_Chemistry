@@ -49,35 +49,7 @@ except Exception as e:
 :::
 
 
-:::{code-cell}
-:tags: ["remove-input"]
 
-# --- START: Required for every block that imports from _ext ---
-import sys
-import os
-from IPython.display import display, HTML
-
-# Adjust the path based on file depth
-try:
-    cwd = os.getcwd()
-    # e.g., use ("..", "..") for a file 2 levels deep.
-    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
-    if project_root not in sys.path:
-        sys.path.insert(0, project_root)
-except Exception as e:
-    print(f"Error setting project path: {e}")
-
-from _ext.interactive_qa import QuestionBlock
-# --- END: Required for every block ---
-questions = QuestionBlock()
-questions.add_question(
-    question_id="sec-2-ch-2-q01",
-    question_text="Given the possible quantum numbers is it possible to have zero vibrational energy in a quantum HO? Please justify and explain your answer. "
-)
-display(HTML(questions.render()))
-#**Conceptual Question:** Given the possible quantum numbers is it possible to have zero vibrational energy in a quantum HO? Please justify and explain your answer. 
-:::
-## Protein folding, DNA and Membrane Formation
 :::{code-cell} python
 :tags: ["remove-input"]
 
@@ -86,7 +58,7 @@ from IPython.display import display, HTML
 
 # This renders the final control panel.
 # Pass the desired title for the printed page here.
-manager = QAManager(page_title="Chapter A: Mathematics Review")
+manager = QAManager(page_title="Chapter 6: Intermolecular Forces")
 display(HTML(manager.render()))
 :::
 ## Practice Problems

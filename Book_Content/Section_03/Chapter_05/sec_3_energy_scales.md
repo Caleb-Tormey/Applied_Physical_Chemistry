@@ -28,3 +28,32 @@ To put this in perspective, remember that a typical carbon-carbon single bond ha
 * **Infrared (IR) Region (Medium Energy):** At 4 to 40 kJ/mol, these photons pack enough punch to stretch and bend the chemical bonds themselves, acting like quantum springs. However, they are still about ten times too weak to actually break a covalent bond. This probes **Vibrational Energy Levels**.
 * **Ultraviolet and Visible (UV-Vis) Region (High Energy):** At 170 to over 600 kJ/mol, these high-energy photons don't just move the nuclei; they physically kick valence electrons out of their ground state orbitals (HOMO) and up into empty higher-energy orbitals (LUMO). This probes **Electronic Energy Levels**. 
     * *Biochemical Relevance:* Look closely at the energy of UV light (up to 600 kJ/mol). It is significantly higher than the energy holding a C-C bond together (347 kJ/mol). This is exactly why UV radiation from the sun is an ionizing mutagen; it has enough brute force to physically sever the covalent bonds in your DNA backbone!
+
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch5 = QuestionBlock()
+
+questions_ch5.add_question(
+    question_id="sec-03-ch-5-q03",
+    question_text=r"A microwave oven heats up your leftover pizza by blasting it with low-energy photons. Based on the energy hierarchy of spectroscopy, what physical motion are the water molecules in the pizza undergoing to generate this heat?"
+)
+display(HTML(questions_ch5.render()))
+:::

@@ -31,7 +31,34 @@ Let's look at the pieces of this equation:
 * **$\sigma$ (Sigma):** This is the distance at which the attractive and repulsive forces perfectly cancel out, making $V(r) = 0$. It gives us a rough estimate of the physical "size" or diameter of the molecule.
 
 [Image of a Lennard-Jones potential energy curve highlighting the deep energy well, the optimal distance (r_eq), and the steep repulsive wall]
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch6 = QuestionBlock()
+
+questions_ch6.add_question(
+    question_id="sec-03-ch-6-q05",
+    question_text=r"In the Lennard-Jones potential, the attractive Van der Waals forces draw two molecules together ($1/r^6$). When their electron clouds finally touch, a massive repulsive force ($1/r^{12}$) kicks in. What fundamental quantum mechanical law is responsible for this violent repulsion?"
+)
+display(HTML(questions_ch6.render()))
+:::
 ### Return to the Potential Energy Well
 
 Take a close look at the shape of the Lennard-Jones curve. It should look incredibly familiar! 

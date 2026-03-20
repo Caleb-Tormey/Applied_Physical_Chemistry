@@ -35,3 +35,32 @@ This strict 180° requirement is the architectural blueprint for biochemistry.
 * **The Anomalies of Water:** A water molecule has two O-H donors and two lone pair acceptors, perfectly arranged in a tetrahedral geometry. When water freezes, the strict 180° directional requirement forces the molecules to spread out into a rigid, open hexagonal lattice. This is why ice is less dense than liquid water and floats—a physical anomaly that prevents oceans from freezing solid from the bottom up!
 * **Protein Secondary Structure:** The backbone of every protein is littered with N-H groups (donors) and C=O groups (acceptors). When a protein folds into an $\alpha$-helix or a $\beta$-sheet, it is physically twisting its backbone to maximize the number of perfectly linear, 180° hydrogen bonds.
 * **The Genetic Code:** The two strands of your DNA are held together by hydrogen bonds between the nucleobases (A pairs with T, C pairs with G). The geometry of the double helix is incredibly rigid. If you try to pair a G with a T, the donor and acceptor atoms physically cannot align at 180° angles. The orbital overlap fails, the hydrogen bonds do not form, and the DNA polymerase enzyme immediately recognizes the geometric mistake!
+
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch6 = QuestionBlock()
+
+questions_ch6.add_question(
+    question_id="sec-03-ch-6-q06",
+    question_text=r"A standard dipole-dipole interaction is relatively flexible regarding the angle between the two molecules. Why does a true hydrogen bond require a strict, rigid 180° angle to reach its maximum strength?"
+)
+display(HTML(questions_ch6.render()))
+:::

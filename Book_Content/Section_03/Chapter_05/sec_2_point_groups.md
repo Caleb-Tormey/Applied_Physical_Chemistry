@@ -11,7 +11,36 @@ Every molecule belongs to a point group. For example:
 
 *(Biochemical Note: While massive proteins have no overall symmetry and belong to the lowest possible point group, $C_1$, the specific active sites of enzymes often closely approximate high-symmetry point groups. For example, the iron-porphyrin ring in your hemoglobin behaves very much like a flat, highly symmetric **$D_{4h}$** molecule!)*
 
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch5 = QuestionBlock()
+
+questions_ch5.add_question(
+    question_id="sec-03-ch-5-q02",
+    question_text=r"If a molecule belongs to the $C_{2v}$ point group, it possesses a $C_2$ principal axis. Without doing any math, how many times must you perform the $C_2$ rotation operation to get the molecule exactly back to its original, starting Identity ($E$) state?"
+)
+display(HTML(questions_ch5.render()))
+:::
 To figure out how a molecule in a specific point group interacts with light, we use a **Character Table**. 
+
 
 ### The Anatomy of a Character Table
 

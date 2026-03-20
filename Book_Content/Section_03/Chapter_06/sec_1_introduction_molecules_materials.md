@@ -25,3 +25,32 @@ If non-covalent interactions are so weak, why do we dedicate an entire chapter t
 A single hydrogen bond is fragile; it is easily broken by the ambient thermal jostling of a cell at 37°C. However, thousands of hydrogen bonds working in concert are exactly what hold the two massive strands of your DNA tightly together in a perfect double helix. Furthermore, it is the collective non-covalent forces of water that force lipid molecules to spontaneously assemble into the cell membranes that encapsulate every living thing. 
 
 To understand the architecture of life, we must first master the physics of how molecules interact with their neighbors. In this chapter, we will build these forces from the ground up, starting with simple charges and ending with the complex networks of water.
+
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch6 = QuestionBlock()
+
+questions_ch6.add_question(
+    question_id="sec-03-ch-6-q01",
+    question_text=r"If you take liquid water and heat it to 100°C, it turns into a gas. Did the heat physically destroy the non-covalent intermolecular forces holding the water molecules together, or did it simply give the molecules enough kinetic energy to overpower them?"
+)
+display(HTML(questions_ch6.render()))
+:::

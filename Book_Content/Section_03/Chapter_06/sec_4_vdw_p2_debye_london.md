@@ -3,7 +3,34 @@
 We just saw how molecules with permanent partial charges (dipoles) attract each other. But what if a molecule doesn't have a permanent dipole? What if it is completely nonpolar, like a molecule of oxygen ($O_2$) or a long hydrocarbon lipid tail? 
 
 Do nonpolar molecules experience intermolecular forces? Absolutely. If they didn't, it would be physically impossible to liquefy nitrogen or freeze carbon dioxide into dry ice. The forces that hold nonpolar molecules together are driven by **induced dipoles**.
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch6 = QuestionBlock()
+
+questions_ch6.add_question(
+    question_id="sec-03-ch-6-q04",
+    question_text=r"A student tells you, 'London dispersion forces are the weakest intermolecular force, so they don't matter much in biology.' Using a 20-carbon lipid tail as an example, explain why this statement is a dangerous oversimplification."
+)
+display(HTML(questions_ch6.render()))
+:::
 ### Dipole-Induced Dipole (Debye Forces)
 
 Imagine dropping a perfectly nonpolar molecule, like $O_2$, into a beaker of water. Water has a strong permanent dipole. As a water molecule bumps into the $O_2$, the partial negative charge on the water's oxygen atom physically repels the electron cloud of the $O_2$ molecule. 

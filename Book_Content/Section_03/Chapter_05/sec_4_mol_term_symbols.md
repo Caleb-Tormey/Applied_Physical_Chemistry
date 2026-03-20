@@ -61,3 +61,32 @@ As we just derived, the ground state of oxygen is a **Triplet** ($^3\Sigma_g^-$)
 This quantum mechanical mismatch—the fact that oxygen is a triplet and your body is made of singlets—is the reason you don't spontaneously combust in Earth's atmosphere! To actually use oxygen for cellular respiration, your body has to use transition metals (like the iron in hemoglobin and cytochrome c oxidase), which have their own unpaired $d$-electrons capable of legally bridging this spin gap.
 
 *(Note: If O₂ absorbs energy and flips one of its electron spins, it becomes **Singlet Oxygen** ($^1\Delta_g$). Because it is now a singlet, the spin-forbidden restriction is lifted. Singlet oxygen is viciously reactive and is a major source of oxidative stress, cellular damage, and aging in biological systems!)*
+
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch5 = QuestionBlock()
+
+questions_ch5.add_question(
+    question_id="sec-03-ch-5-q04",
+    question_text=r"If you artificially excite an electron in a typical organic molecule so its spin flips, the molecule briefly enters a Triplet state. Why does this make the molecule incredibly reactive and dangerous to the surrounding biological tissue?"
+)
+display(HTML(questions_ch5.render()))
+:::

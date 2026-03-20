@@ -19,7 +19,34 @@ Nature doesn't always want to build massive 11-double-bond chains just to make a
 An auxochrome is a functional group (like an $-OH$ or $-NH_2$ group) that does not absorb visible light on its own. However, these groups possess lone pairs of electrons. When you attach an auxochrome directly to a conjugated chromophore, those lone pairs partially mix with the $\pi$ system. 
 
 This mixing physically extends the "box" just a little bit, slightly lowering the HOMO-LUMO gap. This causes the absorption peak to shift to a longer, lower-energy wavelength. We call this a **bathochromic shift** (or a "red shift"). By strategically placing different auxochromes around a core ring structure, biochemists (and nature) can fine-tune a molecule to absorb any exact color of the rainbow.
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch5 = QuestionBlock()
+
+questions_ch5.add_question(
+    question_id="sec-03-ch-5-q07",
+    question_text=r"You are synthesizing a new organic dye in the lab. If you want the dye to absorb a lower-energy (redder) wavelength of light than your current batch, should you chemically *shorten* or *lengthen* the conjugated $\pi$ system?"
+)
+display(HTML(questions_ch5.render()))
+:::
 ### Fluorescence: The Jablonski Diagram
 
 Sometimes, a molecule doesn't just absorb light; it spits it back out. This is called **fluorescence**, and it is arguably the most powerful spectroscopic tool in modern cell biology. 
@@ -32,7 +59,34 @@ Let's track a single molecule through the fluorescent cycle:
 1.  **Absorption (Excitation):** A photon of high-energy light (say, blue light) hits the molecule. An electron instantly jumps from the ground state ($S_0$) to an excited singlet state ($S_1$). This happens in roughly a femtosecond ($10^{-15}$ seconds).
 2.  **Internal Conversion (Relaxation):** The electron is now in a high-energy state, but the molecule itself is also vibrating wildly (it has excess vibrational energy). Before the electron can jump back down, the molecule collides with surrounding water molecules, shedding that excess vibrational energy as physical heat. The electron drops to the lowest vibrational level of the $S_1$ state. This non-radiative loss of energy takes a few picoseconds ($10^{-12}$ seconds).
 3.  **Fluorescence (Emission):** Finally, the electron drops back down to the ground state ($S_0$), releasing its remaining energy as a new photon of light. This happens in roughly a nanosecond ($10^{-9}$ seconds). 
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch5 = QuestionBlock()
+
+questions_ch5.add_question(
+    question_id="sec-03-ch-5-q08",
+    question_text=r"According to the Jablonski diagram, a fluorescent molecule always emits a photon with less energy than the photon it originally absorbed. Where exactly did that missing energy go before the emission occurred?"
+)
+display(HTML(questions_ch5.render()))
+:::
 ### The Stokes Shift
 
 Notice a crucial detail in the Jablonski diagram: because the molecule lost some energy as heat during Step 2 (Internal Conversion), the photon emitted in Step 3 has *less energy* than the photon absorbed in Step 1. 

@@ -40,3 +40,32 @@ This is a **shorter-range force** than a pure ion-ion interaction, but it is sti
 Ion-dipole interactions are the entire reason the oceans are salty. When you drop solid NaCl into water, the massive network of highly polar water molecules completely surrounds the individual Na⁺ and Cl⁻ ions. The oxygen atoms ($\delta^-$) point directly at the sodium, and the hydrogen atoms ($\delta^+$) point directly at the chloride. This forms a tightly bound **hydration shell**. The collective strength of these numerous ion-dipole interactions is strong enough to completely overcome the $1/r$ ion-ion lattice energy of the salt crystal, tearing it apart!
 
 Additionally, nearly one-third of all enzymes require a positively charged metal ion (like Mg²⁺ or Zn²⁺) to function. These metal cofactors are locked into the enzyme's active site via highly specific ion-dipole interactions with the polar side chains of the surrounding amino acids.
+
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch6 = QuestionBlock()
+
+questions_ch6.add_question(
+    question_id="sec-03-ch-6-q02",
+    question_text=r"Why is the electrostatic attraction between a sodium ion (Na⁺) and the oxygen atom of water ($\delta^-$) mathematically considered a 'shorter-range' force ($1/r^2$) than the attraction between a sodium ion and a chloride ion ($1/r$)?"
+)
+display(HTML(questions_ch6.render()))
+:::
