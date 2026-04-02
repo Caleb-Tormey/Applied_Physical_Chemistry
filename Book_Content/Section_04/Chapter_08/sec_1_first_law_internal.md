@@ -16,6 +16,36 @@ The Internal Energy is the sum total of all the microscopic kinetic and potentia
 
 Because $U$ encompasses the exact physical state of the $10^{23}$ molecules right at this very second, **Internal Energy is a State Function.** It does not matter how the system arrived at its current state; $U$ only depends on the present conditions ($P, V, T, n$).
 
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch8 = QuestionBlock()
+
+# 8.1 Internal Energy and the First Law
+questions_ch8.add_question(
+    question_id="sec-05-ch-8-q01",
+    question_text=r"When a muscle cell does physical work to contract, it also inevitably releases heat into the surrounding tissue. According to the First Law of Thermodynamics, if the cell is not currently absorbing new nutrients, what must be physically happening to its Internal Energy ($U$) to 'pay' for both the work and the heat?"
+)
+display(HTML(questions_ch8.render()))
+:::
+
 ### The Master Equation: Moving the Energy
 
 While it is practically impossible to calculate the absolute, total Internal Energy ($U$) of a system from scratch, we rarely need to. In chemistry, we almost never care about the absolute energy; we only care about the *change* in energy ($\Delta U$) during a reaction.
@@ -44,3 +74,33 @@ If a biochemical reaction releases $50 \text{ kJ}$ of heat and does $20 \text{ k
 The First Law of Thermodynamics is the strictest biological speed limit. It dictates that **a living cell cannot generate energy.** When you feel energetic, your cells have not magically created energy out of nothing. They have simply *transformed* it. A plant takes the radiant kinetic energy of a photon and transforms it into the chemical potential energy of a glucose molecule. When you eat that plant, your cells take the chemical potential energy of the glucose and transform it into the mechanical kinetic energy of a contracting muscle fiber, releasing a significant amount of heat ($q$) to the surroundings in the process. 
 
 Because cells are open systems, they are constantly importing high-energy molecules, extracting the energy to do cellular work, and exporting low-energy waste and heat. If you cut a cell off from its surroundings, it can no longer import energy. It will rapidly burn through its internal energy ($U$) until it reaches equilibrium, at which point the cell dies.
+
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch8 = QuestionBlock()
+
+# 8.1 Internal Energy and the First Law
+questions_ch8.add_question(
+    question_id="sec-05-ch-8-q02",
+    question_text=r"Explain why it is practically impossible to measure the *absolute* total internal energy ($U$) of an entire living cell, and why physical chemists are perfectly content only measuring the *change* in internal energy ($\Delta U$) during a reaction."
+)
+display(HTML(questions_ch8.render()))
+:::

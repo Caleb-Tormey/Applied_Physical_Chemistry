@@ -45,3 +45,32 @@ When this blood reaches the capillaries surrounding your alveoli, the gases are 
 Because the $P_{O2}$ is much higher in the lungs than in the blood (160 vs 40), oxygen physically diffuses across the membrane *into* the blood. Simultaneously, because the $P_{CO2}$ is higher in the blood than in the lungs (46 vs 0.3), carbon dioxide physically diffuses *out* of the blood to be exhaled. 
 
 This partial pressure gradient dictates everything. In fact, the physical shape of the hemoglobin protein in your red blood cells—and its ability to bind or release oxygen—is entirely governed by the local $P_{O2}$ of the tissue it is traveling through!
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch7 = QuestionBlock()
+
+# 7.4 Mixtures and Partial Pressures
+questions_ch7.add_question(
+    question_id="sec-04-ch-7-q07",
+    question_text=r"When you inhale, dry atmospheric air is immediately saturated with water vapor in your warm lungs. According to Dalton's Law, what must happen to the partial pressure of oxygen ($P_{O_2}$) as this water vapor is added, assuming the total pressure in your lungs remains exactly 1 atm?"
+)
+display(HTML(questions_ch7.render()))
+:::

@@ -33,7 +33,35 @@ Take a close look at this equation. It builds a permanent, unbreakable bridge be
 * **If $\Delta G^\circ$ is highly positive:** $\ln K_{eq}$ must be negative. This means $K_{eq} < 1$. The equilibrium heavily favors the **reactants**.
 
 Because this is a logarithmic relationship, a very small change in $\Delta G^\circ$ results in a massive exponential shift in the equilibrium concentrations. A $\Delta G^\circ$ of just $-17 \text{ kJ/mol}$ is enough to push a reaction to 99.9% completion!
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch10 = QuestionBlock()
+
+# 10.1 The State of Gridlock
+questions_ch10.add_question(
+    question_id="sec-07-ch-10-q01",
+    question_text=r"At chemical equilibrium, the actual Free Energy change ($\Delta G$) is exactly zero, but the standard Free Energy change ($\Delta G^\circ$) is almost never zero. Explain physically what these two different variables represent and why only one of them drops to zero."
+)
+display(HTML(questions_ch10.render()))
+:::
 ### Rigor Check: Concentrations vs. Activities
 
 Throughout general chemistry, you were taught to calculate $K_{eq}$ using Molarity (moles per liter, denoted by brackets $[C]$). 
@@ -59,3 +87,33 @@ Because of the $\Delta G^\circ = -RT \ln K_{eq}$ equation, you now have a comple
 2.  Look up $S^\circ$ for products and reactants. Calculate $\Delta S_{rxn}^\circ$.
 3.  Calculate $\Delta G^\circ = \Delta H_{rxn}^\circ - T\Delta S_{rxn}^\circ$.
 4.  Calculate $K_{eq} = e^{-\Delta G^\circ / RT}$.
+
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch10 = QuestionBlock()
+
+# 10.1 The State of Gridlock
+questions_ch10.add_question(
+    question_id="sec-07-ch-10-q02",
+    question_text=r"Physical chemists use molarity ($[C]$) to calculate $K_{eq}$ in dilute beakers, but biochemists know they technically need to use Activity ($a$) inside a cell. Why does the dense, crowded environment of the cytoplasm cause a molecule's effective activity to be lower than its physical headcount?"
+)
+display(HTML(questions_ch10.render()))
+:::

@@ -48,3 +48,33 @@ Molecules will always roll down the thermodynamic hill. But what happens if a ce
 Pushing a boulder up a hill requires work. Pushing a molecule up a chemical potential gradient requires a massive input of Free Energy. To pay for that non-spontaneous work, the cell must couple it to a reaction that has a massively negative $\Delta G$. 
 
 This brings us, finally, to the true thermodynamic power of ATP.
+
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch9 = QuestionBlock()
+
+# 9.5 Chemical Potential
+questions_ch9.add_question(
+    question_id="sec-06-ch-9-q08",
+    question_text=r"The chemical potential ($\mu$) of a molecule acts as a generalized thermodynamic driving force. Use the 'boulder on a hill' analogy to explain how this invisible force physically drives the process of osmosis when a red blood cell is placed in a highly concentrated, hypertonic salt solution."
+)
+display(HTML(questions_ch9.render()))
+:::

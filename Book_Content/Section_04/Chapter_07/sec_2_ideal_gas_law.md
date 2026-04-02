@@ -18,7 +18,35 @@ However, this mathematical perfection comes at a steep philosophical cost. To ma
 2.  **Assumption 2: Molecules experience zero intermolecular forces.** The ideal gas model assumes that when two gas molecules collide, they bounce off each other perfectly elastically, like billiard balls, feeling absolutely no attraction to one another. But we know that every molecule in the universe has London dispersion forces, and polar molecules have Keesom and Debye forces. Molecules *do* pull on each other.
 
 Because of these two massive assumptions, **a truly ideal gas does not exist.** It is a physically impossible, mathematically fake baseline.
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch7 = QuestionBlock()
+
+# 7.2 The Ideal Gas Law
+questions_ch7.add_question(
+    question_id="sec-04-ch-7-q03",
+    question_text=r"The Ideal Gas Law assumes that molecules take up exactly zero volume and have absolutely no intermolecular attractions. Explain physically why these two assumptions make it impossible for a perfectly ideal gas to ever condense into a liquid, no matter how cold it gets."
+)
+display(HTML(questions_ch7.render()))
+:::
 ### Why Do We Still Use It? 
 
 If the Ideal Gas Law is a lie, why do we still teach it? Because under standard biological and atmospheric conditions (like room temperature and 1 atm of pressure), gas molecules are moving so fast, and are so far apart, that their tiny physical volumes and relatively weak $1/r^6$ attractive forces barely register. The fake baseline is usually more than 99% accurate for atmospheric gases like $O_2$ and $N_2$.
@@ -38,3 +66,32 @@ $$\Pi = MRT$$
 *(Note: For electrolytes that dissociate into multiple ions, like NaCl, we simply add the van 't Hoff factor $i$ to get $\Pi = iMRT$.)*
 
 Without the fake, perfect baseline of the ideal gas law, we would have no mathematical foundation for predicting how water rushes into and out of cells to balance solute concentrations!
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch7 = QuestionBlock()
+
+# 7.2 The Ideal Gas Law
+questions_ch7.add_question(
+    question_id="sec-04-ch-7-q04",
+    question_text=r"Physical chemists frequently use the Ideal Gas Law to calculate the osmotic pressure of dilute biological solutions. What conceptual similarity between a dissolved solute spreading through a solvent, and a gas expanding in a vacuum, allows this mathematical trick to work?"
+)
+display(HTML(questions_ch7.render()))
+:::

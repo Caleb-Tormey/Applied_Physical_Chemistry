@@ -49,3 +49,33 @@ Conversely, a **Path Function** depends entirely on the specific mechanism or ro
 In the next chapters, we will introduce Enthalpy ($H$), Entropy ($S$), and Gibbs Free Energy ($G$). These are all **State Functions**. 
 
 This is incredibly powerful for biochemists. It means if we want to calculate the total energy released by metabolizing a molecule of glucose into $CO_2$ and $H_2O$, we do not need to calculate the energy of every single intermediate step in the grueling, 10-enzyme pathway of glycolysis. We only need to know the thermodynamic state of the glucose at the beginning, and the state of the $CO_2$ and $H_2O$ at the end!
+
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch7 = QuestionBlock()
+
+# 7.1 The Macroscopic World
+questions_ch7.add_question(
+    question_id="sec-04-ch-7-q01",
+    question_text=r"A sealed bomb calorimeter is considered a closed system, while a perfectly insulated thermos is considered an isolated system. Why is it physically impossible for a living cell to survive if it operates as either of these? What type of system must a living organism be?"
+)
+display(HTML(questions_ch7.render()))
+:::

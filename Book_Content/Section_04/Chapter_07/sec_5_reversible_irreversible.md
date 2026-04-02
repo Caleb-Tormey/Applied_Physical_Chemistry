@@ -52,7 +52,35 @@ This is a **reversible expansion**. It is infinitely slow, perfectly controlled,
 Because the external pressure is constantly changing at every microscopic step, we cannot use simple algebra. We have to use calculus to integrate the ideal gas law ($P = nRT/V$) over the entire volume change:
 
 $$w = -nRT \ln\left(\frac{V_f}{V_i}\right)$$
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch7 = QuestionBlock()
+
+# 7.5 Heat, Work, and Pathways
+questions_ch7.add_question(
+    question_id="sec-04-ch-7-q08",
+    question_text=r"An expanding gas does significantly more physical work on the surroundings if it expands reversibly (in infinitely small steps) rather than irreversibly (against a constant external pressure). Explain physically why this 'slow and steady' pathway extracts the maximum possible work."
+)
+display(HTML(questions_ch7.render()))
+:::
 ### Why Does the Pathway Matter? Maximum Work
 
 Why do we force physical chemistry students to learn the math of a perfectly reversible, infinitely slow process that doesn't actually exist in the real world? 
@@ -72,3 +100,32 @@ To get the absolute maximum amount of ATP out of that glucose, your cells would 
 **Life is the ultimate thermodynamic compromise.** Evolution has designed metabolic pathways (like glycolysis and the Krebs cycle) to break the oxidation of glucose down into dozens of tiny, highly controlled enzymatic steps. By taking many small steps instead of one massive explosion, biology mimics a reversible pathway as closely as physically possible. 
 
 You don't get 100% of the maximum theoretical work (because you need it to happen fast enough to outrun a predator), but you get roughly 40% efficiency—which is vastly better than a combustion engine, and just enough to keep you alive!
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch7 = QuestionBlock()
+
+# 7.5 Heat, Work, and Pathways
+questions_ch7.add_question(
+    question_id="sec-04-ch-7-q09",
+    question_text=r"Given that reversible processes extract the maximum possible thermodynamic work but take an infinite amount of time to complete, how do living cells compromise between thermodynamic efficiency and biological survival when breaking down glucose?"
+)
+display(HTML(questions_ch7.render()))
+:::

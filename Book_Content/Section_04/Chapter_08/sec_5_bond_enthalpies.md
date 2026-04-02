@@ -5,7 +5,35 @@ To this point, we have used Hess's Law to calculate the Enthalpy change of massi
 Every chemical reaction is simply a reorganization of matter. Reactants are torn apart, and products are stitched together. Therefore, the total Enthalpy change of a reaction ($\Delta H_{rxn}$) is just the mathematical sum of the energy required to break the old bonds and the energy released by forming the new bonds.
 
 To understand this, we must establish an unbreakable rule of physical chemistry.
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch8 = QuestionBlock()
+
+# 8.5 Hess's Law and Biochemical Pathways
+questions_ch8.add_question(
+    question_id="sec-05-ch-8-q09",
+    question_text=r"Hess's Law states that if a chemical pathway is the sum of two sequential reactions, its total $\Delta H$ is simply the sum of their individual $\Delta H$ values. What fundamental physical property of Enthalpy (established in Chapter 7) makes this mathematical addition perfectly legal, regardless of the enzymes used?"
+)
+display(HTML(questions_ch8.render()))
+:::
 ### The Absolute Truth of Chemical Bonds
 
 If you remember only one thing from this entire chapter, let it be this:
@@ -36,7 +64,35 @@ Let's look at the actual thermodynamic ledger of this reaction:
 The reason ATP is such a phenomenal fuel is that **the payoff is vastly larger than the investment.** The total Enthalpy change of ATP hydrolysis under standard cellular conditions is roughly **-30 kJ/mol**. 
 
 Why is the payoff so huge? Because the products (ADP + P$_i$) are significantly more stable than the reactants! At physiological pH, the three phosphate groups of ATP carry a total of four negative charges crammed incredibly close together. The electrostatic repulsion between these negatively charged oxygen atoms is staggering. When hydrolysis occurs, that repulsive tension is finally released, like a tightly coiled spring snapping open. Furthermore, the newly freed orthophosphate (P$_i$) is stabilized by immense resonance, lowering its energy state even further.
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch8 = QuestionBlock()
+
+# 8.5 Hess's Law and Biochemical Pathways
+questions_ch8.add_question(
+    question_id="sec-05-ch-8-q10",
+    question_text=r"A biology student claims that the heat released during ATP hydrolysis comes directly from the 'explosive power' of breaking the high-energy terminal phosphate bond. Use the strict physical chemistry definitions of bond breaking and bond formation to explain why they have the physics completely backward."
+)
+display(HTML(questions_ch8.render()))
+:::
 ### The Teaser: The Missing Entropic Half of ATP
 
 We have successfully explained the Enthalpy of ATP. The relief of electrostatic repulsion and the formation of highly stable product bonds explains the heat. 

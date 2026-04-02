@@ -85,7 +85,7 @@ from IPython.display import display, HTML
 
 # This renders the final control panel.
 # Pass the desired title for the printed page here.
-manager = QAManager(page_title="Chapter A: Mathematics Review")
+manager = QAManager(page_title="Chapter 9: Second and Third Law of Theormodynamics")
 display(HTML(manager.render()))
 :::
 ## Practice Problems

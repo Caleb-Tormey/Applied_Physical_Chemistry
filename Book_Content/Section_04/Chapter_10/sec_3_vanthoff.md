@@ -60,3 +60,33 @@ $$\frac{K_2}{1.0 \times 10^5} = e^{-0.186} \approx 0.83$$
 $$K_2 \approx 8.3 \times 10^4$$
 
 **The Result:** A mere $3^\circ\text{C}$ fever caused the equilibrium binding constant to drop by 17%! Because the binding reaction was exothermic (releasing heat), adding more heat to the system (raising the temperature) mathematically punished the forward reaction. The drug is now significantly less effective at binding to the receptor, potentially requiring a different dosing protocol for a highly febrile patient.
+
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch10 = QuestionBlock()
+
+# 10.3 Temperature Dependence: van 't Hoff
+questions_ch10.add_question(
+    question_id="sec-07-ch-10-q05",
+    question_text=r"Using the heat/chaos tug-of-war ($\Delta G^\circ = \Delta H^\circ - T\Delta S^\circ$), explain physically why a fever (an increase in ambient temperature) mathematically punishes an exothermic drug-binding reaction, resulting in a lower equilibrium binding affinity."
+)
+display(HTML(questions_ch10.render()))
+:::

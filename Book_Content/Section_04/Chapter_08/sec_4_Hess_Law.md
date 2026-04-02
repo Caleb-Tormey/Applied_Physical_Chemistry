@@ -18,7 +18,35 @@ For physical chemistry, the standard state is strictly defined as:
 With the conditions set, chemists declared that the standard Enthalpy of any pure element in its most stable form is exactly zero. (e.g., The Enthalpy of $O_{2(g)}$ or solid graphite Carbon is $0 \text{ kJ/mol}$). 
 
 From this zero-point baseline, we can measure the **Standard Enthalpy of Formation ($\Delta H_f^\circ$)**. This is the exact amount of heat absorbed or released when exactly one mole of a complex molecule is assembled from its pure, elemental building blocks. 
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch8 = QuestionBlock()
+
+# 8.4 Standard States and Enthalpies of Formation
+questions_ch8.add_question(
+    question_id="sec-05-ch-8-q07",
+    question_text=r"In thermodynamic tables, the standard enthalpy of formation ($\Delta H_f^\circ$) for pure diatomic oxygen gas ($O_2$) is defined as exactly zero. Explain why this baseline is a completely arbitrary human convention rather than a physical truth about oxygen molecules having 'zero energy'."
+)
+display(HTML(questions_ch8.render()))
+:::
 ### Hess's Law: Thermodynamic Algebra
 
 Because Enthalpy is a state function, the pathway doesn't matter. The $\Delta H$ only depends on the starting reactants and the final products. 
@@ -49,3 +77,33 @@ What is the total Enthalpy change for Scenario B?
 According to Hess's Law, because the starting state (Glucose + $O_2$) and the ending state ($CO_2$ + $H_2O$) are exactly the same, the total energy change must be exactly the same. **The $\Delta H$ of cellular respiration is exactly $-2808 \text{ kJ/mol}$.**
 
 The cell does not magically change the thermodynamics of the reaction. The $\Delta H$ is locked by the laws of physics. What the cell *does* change is the pathway. By breaking the reaction into dozens of tiny steps, the cell prevents the energy from being violently lost as heat ($q$), and instead expertly captures that energy to do chemical work ($w$)—specifically, the work of synthesizing ATP!
+
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch8 = QuestionBlock()
+
+# 8.4 Standard States and Enthalpies of Formation
+questions_ch8.add_question(
+    question_id="sec-05-ch-8-q08",
+    question_text=r"You calculate the exact standard enthalpy of reaction ($\Delta H_{rxn}^\circ$) for the combustion of a fuel using textbook tables measured at standard room temperature ($25^\circ\text{C}$). According to Kirchhoff's Law, why would this calculated number be mathematically incorrect if you applied it to a reaction happening in a thermal vent at $80^\circ\text{C}$?"
+)
+display(HTML(questions_ch8.render()))
+:::

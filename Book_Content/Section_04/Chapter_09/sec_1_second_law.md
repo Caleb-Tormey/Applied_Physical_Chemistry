@@ -13,7 +13,35 @@ To understand this, imagine you are floating in the dead vacuum of deep space, l
 We need the exact same sort of asymmetry to give us a direction in time. 
 
 In physics, "forward" in time does not exist without a thermodynamic asymmetry. We experience the "Arrow of Time" solely because the universe started in a state of incredibly concentrated, low entropy (the Big Bang), and it has been moving relentlessly toward a state of high entropy ever since. 
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch9 = QuestionBlock()
+
+# 9.1 The Arrow of Time and the Concept of Entropy
+questions_ch9.add_question(
+    question_id="sec-06-ch-9-q01",
+    question_text=r"Classical mechanics equations (like the trajectory of gas molecules) work perfectly well whether time is moving forward or backward. Why does a video of an egg shattering look obviously fake when played in reverse, and how does Boltzmann's definition of entropy ($S = k_B \ln W$) physically define this 'Arrow of Time'?"
+)
+display(HTML(questions_ch9.render()))
+:::
 ### Spontaneity and the Second Law
 
 This brings us to the **Second Law of Thermodynamics**, which formally defines the Arrow of Time: **For any spontaneous process, the entropy of the universe must increase ($\Delta S_{univ} > 0$).**
@@ -80,3 +108,33 @@ Remember the Hydrophobic Effect from Chapter 6? When a nonpolar protein sequence
 The universe hates this. The Second Law demands that entropy must increase. 
 
 Therefore, the nonpolar amino acids spontaneously clump together, folding the protein into a tight 3D sphere. By clumping together, they reduce their exposed surface area, which releases those trapped water molecules back into the chaotic, freely tumbling bulk solvent. The massive increase in the microstates ($W$) of the water molecules is the fundamental thermodynamic force that drives protein folding!
+
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch9 = QuestionBlock()
+
+# 9.1 The Arrow of Time and the Concept of Entropy
+questions_ch9.add_question(
+    question_id="sec-06-ch-9-q02",
+    question_text=r"When a nonpolar protein sequence folds into a tight 3D sphere, the amino acids lose significant freedom of motion. Explain why this seemingly unfavorable decrease in the protein's own microstates is actually driven by a massive, favorable increase in the microstates of the surrounding water molecules."
+)
+display(HTML(questions_ch9.render()))
+:::

@@ -30,7 +30,35 @@ Clausius defined the change in entropy macroscopically: if you dump heat ($q$) i
 
 Therefore, Clausius placed Temperature ($T$) in the denominator. The macroscopic change in entropy is the heat transferred divided by the absolute temperature at which the transfer occurs:
 $$\Delta S = \frac{q}{T}$$
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch9 = QuestionBlock()
+
+# 9.3 The Universe Ledger: System vs. Surroundings
+questions_ch9.add_question(
+    question_id="sec-06-ch-9-q04",
+    question_text=r"It is impossible to put a thermometer in the Andromeda Galaxy to measure the entropy change of the entire universe ($\Delta S_{univ}$). How does the First Law (conservation of energy) and Clausius's definition of entropy allow us to accurately calculate the entropy change of the surroundings using only the Enthalpy ($\Delta H_{sys}$) of our tiny cellular system?"
+)
+display(HTML(questions_ch9.render()))
+:::
 ### The Heat Bridge
 
 Because of Clausius, we now have a bridge between the impossible-to-measure universe and our tiny beaker. 
@@ -57,3 +85,33 @@ $$\Delta S_{surr} = \frac{-(- \Delta H_{sys})}{T} = \text{A massive positive num
 The system releases so much heat that it violently jiggles the surrounding water molecules, massively increasing *their* entropy. The cell is paying Clausius's "entropy tax" by exporting thermal chaos to the rest of the universe. The chaos created in the surrounding water is so large that it completely overpowers the structural order created in the DNA. 
 
 When you add them together in the Universe Ledger, $\Delta S_{univ}$ is positive, the Second Law is satisfied, and the DNA double helix spontaneously forms.
+
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch9 = QuestionBlock()
+
+# 9.3 The Universe Ledger: System vs. Surroundings
+questions_ch9.add_question(
+    question_id="sec-06-ch-9-q05",
+    question_text=r"Synthesizing a highly ordered DNA double helix locally decreases chaos ($\Delta S_{sys} < 0$). Explain how the cell 'pays the entropy tax' using exothermic heat to ensure that the overall Universe Ledger still results in a positive increase in chaos ($\Delta S_{univ} > 0$)."
+)
+display(HTML(questions_ch9.render()))
+:::

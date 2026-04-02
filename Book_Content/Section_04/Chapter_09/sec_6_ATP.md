@@ -25,7 +25,35 @@ $$\Delta G = \Delta H - T\Delta S$$
 * The reaction increases chaos ($+\Delta S$).
 
 ATP hydrolysis sits firmly in "The Dream" thermodynamic quadrant. Because the Enthalpy term is negative, and you are subtracting a positive Entropy term, **both halves of the equation work together to drive the Free Energy down.** You do not have to pay an "entropy tax" to the universe; the universe actually pays *you*. The Standard Gibbs Free Energy ($\Delta G^\circ$) of ATP hydrolysis is a massive **$-30.5 \text{ kJ/mol}$**. This is a tremendously exergonic reaction, providing a huge amount of "free" energy to push other molecules up their chemical potential gradients.
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch9 = QuestionBlock()
+
+# 9.6 The ATP Payoff
+questions_ch9.add_question(
+    question_id="sec-06-ch-9-q09",
+    question_text=r"The hydrolysis of ATP is heavily driven by Enthalpy (heat release), but it also relies on a massive 'entropy failsafe' ($+\Delta S$). What two specific physical phenomena occur during phosphate cleavage that cause this large increase in systemic chaos?"
+)
+display(HTML(questions_ch9.render()))
+:::
 ### The Real Cell: $\Delta G$ vs. $\Delta G^\circ$
 
 There is one final, critical detail. That $-30.5 \text{ kJ/mol}$ value is the *Standard* Free Energy ($\Delta G^\circ$). Remember from Section 8.4 that the standard state assumes every single reactant and product is sitting at a concentration of exactly $1 \text{ M}$. 
@@ -51,3 +79,33 @@ As the concentrations begin to equalize, the chemical potential gradient flatten
 When $\Delta G = 0$, the system can no longer do any useful work. The macro-state of the system stops changing. This state of thermodynamic gridlock is called **Chemical Equilibrium**. 
 
 For a reaction in a beaker, equilibrium is the natural end point. For a living, open system, equilibrium is death. Exactly how reactions reach this gridlock, and how we can mathematically predict the exact concentrations at which it occurs, is the subject of our next chapter: **Chapter 10: Chemical Equilibrium**.
+
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch9 = QuestionBlock()
+
+# 9.6 The ATP Payoff
+questions_ch9.add_question(
+    question_id="sec-06-ch-9-q10",
+    question_text=r"The standard free energy of ATP hydrolysis is roughly $-30.5\:\text{kJ/mol}$, but the actual real-time free energy inside a human cell is roughly $-50\:\text{kJ/mol}$. How does the mitochondria's constant hoarding of ATP physically 'steepen the thermodynamic hill' to wring more usable work out of the molecule?"
+)
+display(HTML(questions_ch9.render()))
+:::

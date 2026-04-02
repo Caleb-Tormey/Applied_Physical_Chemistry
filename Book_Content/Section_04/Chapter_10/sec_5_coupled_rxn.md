@@ -37,7 +37,35 @@ It is absolutely vital that you understand *how* this coupling actually occurs p
 2.  The ammonia molecule then attacks this unstable intermediate. The phosphate group is an excellent "leaving group." It snaps off (releasing that massive electrostatic tension we discussed in Chapter 9), providing the thermodynamic driving force for the ammonia to take its place, forming glutamine.
 
 ATP coupling works because it fundamentally changes the identity of the reactants. By covalently attaching a phosphate, the cell creates a new molecule with a vastly different, vastly more favorable equilibrium constant!
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch10 = QuestionBlock()
+
+# 10.5 Coupled Reactions and the Steady State
+questions_ch10.add_question(
+    question_id="sec-07-ch-10-q08",
+    question_text=r"ATP hydrolysis is physically coupled to unfavorable amino acid synthesis. Explain why the idea that ATP 'explodes and releases a magic spark of energy' is physically incorrect, and describe what the enzyme *actually* does with the terminal phosphate to drive the reaction."
+)
+display(HTML(questions_ch10.render()))
+:::
 ### Equilibrium vs. Steady State: The Definition of Life
 
 We must conclude our study of thermodynamics with the most profound distinction in biochemistry. 
@@ -59,3 +87,33 @@ During those five minutes, millions of ATP molecules were hydrolyzed to do work,
 * **Steady State:** Concentrations are constant because the rate of input exactly matches the rate of output. The system is kept artificially, relentlessly far from equilibrium. $\Delta G \ll 0$.
 
 Homeostasis—the biological definition of life—is simply the massive, continuous expenditure of energy to maintain a thermodynamic steady state against the inescapable pull of chemical equilibrium.
+
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch10 = QuestionBlock()
+
+# 10.5 Coupled Reactions and the Steady State
+questions_ch10.add_question(
+    question_id="sec-07-ch-10-q09",
+    question_text=r"If the concentration of ATP in your cells remains completely constant at 5.0 mM for several hours, your cell is in a Steady State, not at Chemical Equilibrium. Explain the profound thermodynamic difference between these two states, and why reaching true equilibrium means you are dead."
+)
+display(HTML(questions_ch10.render()))
+:::

@@ -33,7 +33,35 @@ This collective backward pull acts like a parachute, slowing the molecule down j
 To use the ideal $nRT$ math, we have to artificially add that "lost" pressure back in. This is the $+ a\frac{n^2}{V^2}$ term.
 * $(n/V)^2$ represents the density of the gas (how close the molecules are).
 * $a$ is a measured constant specific to each molecule that represents the strength of its intermolecular forces. Water has a massive $a$ value due to hydrogen bonding; nonpolar methane has a much smaller $a$ value.
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch7 = QuestionBlock()
+
+# 7.3 Real Gases
+questions_ch7.add_question(
+    question_id="sec-04-ch-7-q05",
+    question_text=r"In the van der Waals equation, how does the $a$ parameter (intermolecular attractions) specifically alter the physical pressure the gas exerts on the walls of its container compared to an ideal gas?"
+)
+display(HTML(questions_ch7.render()))
+:::
 ### Biochemical Relevance: Macromolecular Crowding
 
 You might still be thinking, "This is great for engines, but I study cells." 
@@ -43,3 +71,33 @@ The concept of the $b$ parameter (excluded volume) is currently one of the hotte
 In reality, the cytosol is crammed full of ribosomes, cytoskeleton filaments, mRNA, and millions of folded proteins. Up to 40% of the physical volume of a cell is solid biomatter. This is called **macromolecular crowding**. 
 
 Because of this massive excluded volume ($nb$), the *actual* free water volume available for a substrate to find an enzyme is much smaller than the total volume of the cell. This physical crowding drastically alters the thermodynamics of protein folding and chemical equilibrium, proving that you cannot treat the inside of a cell like a dilute, ideal solution!
+
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch7 = QuestionBlock()
+
+# 7.3 Real Gases
+questions_ch7.add_question(
+    question_id="sec-04-ch-7-q06",
+    question_text=r"A living cell's cytoplasm is packed with massive proteins, lipids, and nucleic acids. Which van der Waals parameter ($a$ or $b$) is most drastically affected by this 'macromolecular crowding', and how does it restrict the behavior of surrounding water molecules?"
+)
+display(HTML(questions_ch7.render()))
+:::

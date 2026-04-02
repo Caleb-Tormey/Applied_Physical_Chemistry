@@ -43,7 +43,35 @@ Imagine a reaction at perfect equilibrium ($Q = K_{eq}$). Now, you inject a mass
 Because $Q = [\text{Products}] / [\text{Reactants}]$, increasing the denominator immediately causes $Q$ to plummet. Suddenly, $Q < K_{eq}$. The natural log of the ratio becomes negative, $\Delta G$ drops below zero, and the universe instantly drives the reaction forward. 
 
 The reaction doesn't shift because it "wants" to relieve stress. It shifts because you mathematically forced $\Delta G$ to become negative!
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch10 = QuestionBlock()
+
+# 10.2 The Reaction Quotient (Q) vs. K
+questions_ch10.add_question(
+    question_id="sec-07-ch-10-q03",
+    question_text=r"Instead of using the vague 'see-saw' of Le Châtelier's Principle, explain mathematically how injecting a massive amount of reactant into a system physically forces the reaction forward by altering the $\ln(Q/K_{eq})$ term."
+)
+display(HTML(questions_ch10.render()))
+:::
 ### Quantitative Focus: Surviving Unfavorable Reactions
 
 This math is the secret to human metabolism. 
@@ -60,3 +88,33 @@ It uses the $Q/K_{eq}$ ratio. The very next enzyme in the glycolysis pathway ins
 As long as the cell can keep $Q$ significantly smaller than $0.047$, the $\ln(Q/K_{eq})$ term will be a massive negative number. This negative number overpowers the $+7.5 \text{ kJ/mol}$ standard cost, making the actual, real-time $\Delta G$ negative! 
 
 The cell conquers positive $\Delta G^\circ$ barriers simply by manipulating local concentrations to keep the system mathematically starved of products.
+
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch10 = QuestionBlock()
+
+# 10.2 The Reaction Quotient (Q) vs. K
+questions_ch10.add_question(
+    question_id="sec-07-ch-10-q04",
+    question_text=r"If a specific step in glycolysis has a highly positive standard free energy ($\Delta G^{\circ\prime} > 0$), explain how the cell can still force this reaction to be spontaneous ($\Delta G < 0$) simply by having the *next* enzyme in the metabolic pathway work incredibly fast."
+)
+display(HTML(questions_ch10.render()))
+:::

@@ -50,3 +50,33 @@ Let's be candid. As a biochemist, you will use the First Law (conservation of en
 Why? Because the Third Law is a foundational tool, not a daily operational rule. It exists to establish the absolute Kelvin temperature scale and to allow physical chemists to populate those massive data tables in the back of your textbook. 
 
 Once the absolute entropy values ($S^\circ$) are calculated and written down in the table, the Third Law has done its job. As a biologist, you simply look up the numbers, calculate your $\Delta S$, and move straight back to the Second Law to see if the universe allows your reaction to proceed. The Third Law is the unsung hero that makes the math of the Second Law actually usable in a laboratory.
+
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch9 = QuestionBlock()
+
+# 9.2 The Third Law: The Absolute Baseline
+questions_ch9.add_question(
+    question_id="sec-06-ch-9-q03",
+    question_text=r"If you look at the thermodynamic tables in an appendix, Enthalpy is listed as a relative change ($\Delta H_f^\circ$) but Entropy is listed as an absolute value ($S^\circ$). Explain physically why the Third Law of Thermodynamics allows us to measure absolute entropy, but we remain unable to measure absolute energy."
+)
+display(HTML(questions_ch9.render()))
+:::

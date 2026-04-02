@@ -40,7 +40,35 @@ Let's look at the mathematical payoff. What happens to the change in Enthalpy ($
    $$\Delta H = (q_p - P\Delta V) + P\Delta V$$
 4. The $-P\Delta V$ expansion work perfectly cancels out the $+P\Delta V$ definition of Enthalpy!
    $$\Delta H = q_p$$
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch8 = QuestionBlock()
+
+# 8.2 Enthalpy: The Heat at Constant Pressure
+questions_ch8.add_question(
+    question_id="sec-05-ch-8-q03",
+    question_text=r"Enthalpy ($H$) was invented to correct for the expansion work ($P\Delta V$) a system does against the atmosphere. Why is the change in Enthalpy ($\Delta H$) almost exactly mathematically identical to the change in Internal Energy ($\Delta U$) for a metabolic reaction that takes place entirely in the liquid phase without producing any gas?"
+)
+display(HTML(questions_ch8.render()))
+:::
 ### The Payoff
 
 This is the entire reason Enthalpy exists. **At constant pressure, the change in Enthalpy ($\Delta H$) is exactly equal to the heat exchanged by the system.** You do not have to calculate the expansion work. You do not have to care if the beaker expanded or contracted. The math automatically hides the work term for you. 
@@ -49,3 +77,33 @@ This is the entire reason Enthalpy exists. **At constant pressure, the change in
 Because every living organism on Earth operates under the constant pressure of the atmosphere, biochemists almost entirely ignore Internal Energy ($U$) and exclusively use Enthalpy ($H$). 
 
 When you read a biochemistry paper that states, "The folding of this protein is highly exothermic, releasing $40 \text{ kJ/mol}$ of energy," they are giving you the $\Delta H$. When you look up the caloric content of a molecule of glucose, you are looking at the $\Delta H$ of combustion. For a biochemist, Enthalpy *is* the currency of heat.
+
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch8 = QuestionBlock()
+
+# 8.2 Enthalpy: The Heat at Constant Pressure
+questions_ch8.add_question(
+    question_id="sec-05-ch-8-q04",
+    question_text=r"If a biological reaction produces a massive amount of gas (like yeast fermenting sugar into $CO_2$) in an open beaker, will the heat you actually measure ($q_p$) be larger or smaller in magnitude than the true change in internal energy ($\Delta U$)? Explain physically where the 'missing' energy went."
+)
+display(HTML(questions_ch8.render()))
+:::

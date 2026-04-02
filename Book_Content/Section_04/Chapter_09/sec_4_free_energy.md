@@ -34,7 +34,35 @@ $$\Delta A = \Delta U - T\Delta S$$
 * **Gibbs ($G$):** Predicts spontaneity at constant pressure and temperature. It represents the maximum *non-expansion* work a system can do. 
 
 Because cells are squishy and exist at constant atmospheric pressure, biochemists completely ignore Helmholtz and exclusively use Gibbs. We don't care about total work; we only care about non-expansion work (like the chemical work of synthesizing proteins or the osmotic work of pumping ions across a membrane). 
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch9 = QuestionBlock()
+
+# 9.4 Free Energy: Helmholtz vs. Gibbs
+questions_ch9.add_question(
+    question_id="sec-06-ch-9-q06",
+    question_text=r"Biochemists almost exclusively use Gibbs Free Energy ($G$) rather than Helmholtz Free Energy ($A$) to predict if a reaction will happen. What specific physical constraints of a living cell make Gibbs the mathematically correct choice?"
+)
+display(HTML(questions_ch9.render()))
+:::
 ### What does "Free" actually mean?
 
 Why did Gibbs and Helmholtz use the word "Free"? It has nothing to do with cost. It means "available."
@@ -56,3 +84,33 @@ There are four possible scenarios:
 2.  **The Impossible ($+\Delta H, -\Delta S$):** The reaction costs heat and decreases chaos. Both terms are unfavorable. $\Delta G$ is always positive. *Never spontaneous at any temperature.*
 3.  **Enthalpy Driven ($-\Delta H, -\Delta S$):** The reaction is favorable regarding heat, but unfavorable regarding chaos (e.g., Protein Folding). To keep the $-T\Delta S$ tax penalty small, the temperature must be low. *Spontaneous only at LOW temperatures.*
 4.  **Entropy Driven ($+\Delta H, +\Delta S$):** The reaction costs heat, but creates massive chaos (e.g., Melting ice, or denaturing a protein). To make the favorable $+T\Delta S$ term large enough to overcome the Enthalpy cost, the temperature must be high. *Spontaneous only at HIGH temperatures.*
+
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch9 = QuestionBlock()
+
+# 9.4 Free Energy: Helmholtz vs. Gibbs
+questions_ch9.add_question(
+    question_id="sec-06-ch-9-q07",
+    question_text=r"In the equation $\Delta G = \Delta H - T\Delta S$, we can compare Enthalpy ($\Delta H$) to a 'gross paycheck' and Gibbs Free Energy ($\Delta G$) to your 'take-home pay.' Explain this analogy. What does the word 'Free' actually refer to in a biochemical context?"
+)
+display(HTML(questions_ch9.render()))
+:::

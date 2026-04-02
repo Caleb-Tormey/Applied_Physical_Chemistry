@@ -7,7 +7,35 @@ But how do we actually *measure* these energy changes in a laboratory? We cannot
 As we briefly introduced in Chapter 7, the bridge between heat ($q$) and temperature ($\Delta T$) is **Heat Capacity ($C$)**. Heat capacity is the exact amount of energy required to raise the temperature of one mole of a substance by one Kelvin. 
 
 Because we have two different thermodynamic conditions (constant volume vs. constant pressure), we must also have two different heat capacities: $C_v$ and $C_p$.
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
 
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch8 = QuestionBlock()
+
+# 8.3 Calorimetry and Heat Capacity
+questions_ch8.add_question(
+    question_id="sec-05-ch-8-q05",
+    question_text=r"Liquid water has an incredibly high specific heat capacity compared to organic solvents. Explain biologically why this specific physical property is essential for preventing your cellular enzymes from denaturing during a high-fever infection or a heavy workout."
+)
+display(HTML(questions_ch8.render()))
+:::
 ### Heating a Gas: Why $C_p$ is Greater than $C_v$
 
 Imagine you have exactly one mole of an ideal gas. You want to heat it up by exactly 10 K. 
@@ -39,3 +67,33 @@ For liquids and solids:
 $$C_p \approx C_v$$
 
 This is why, in biochemistry and biology textbooks, you will rarely see a $p$ or $v$ subscript on the heat capacity of water. Biologists can safely use a generic $C$ (like the specific heat of water, roughly 4.18 J/g°C) because the physical state of a cell makes the thermodynamic difference between $U$ and $H$ practically negligible!
+
+:::{code-cell} python
+:tags: ["remove-input"]
+# --- START: Required for every block that imports from _ext ---
+import sys
+import os
+from IPython.display import display, HTML
+
+# Adjust the path based on file depth
+try:
+    cwd = os.getcwd()
+    # e.g., use ("..", "..") for a file 2 levels deep.
+    project_root = os.path.abspath(os.path.join(cwd, "..", "..", ".."))
+    if project_root not in sys.path:
+        sys.path.insert(0, project_root)
+except Exception as e:
+    print(f"Error setting project path: {e}")
+
+from _ext.interactive_qa import QuestionBlock
+# --- END: Required for every block ---
+
+questions_ch8 = QuestionBlock()
+
+# 8.3 Calorimetry and Heat Capacity
+questions_ch8.add_question(
+    question_id="sec-05-ch-8-q06",
+    question_text=r"When studying a protein using Differential Scanning Calorimetry (DSC), the machine detects a sudden, massive spike in the heat capacity ($C_p$) of the solution exactly at the temperature where the protein unfolds. Does this mean the unfolding process is absorbing energy (endothermic) or releasing energy (exothermic)?"
+)
+display(HTML(questions_ch8.render()))
+:::
