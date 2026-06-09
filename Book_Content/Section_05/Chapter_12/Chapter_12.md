@@ -31,9 +31,20 @@ try:
 except Exception as e:
     print(f"Error setting project path: {e}")
 :::
-# Chapter 12: Integrated Rate laws and Half-Life
+# Chapter 12: Integrated Rate Laws and Half-Life
 
-## First-order, Second-order, and zero-order Reactions
+In Chapter 11, we defined the rate of a reaction as the change in concentration over a tiny, instantaneous fraction of time ($-\frac{d[\text{A}]}{dt}$). We also built empirical rate laws that tie this instantaneous rate to the current concentration of the reactants (e.g., $\text{Rate} = k[\text{A}]$).
+
+But there is a massive practical problem with this. If you are a doctor administering a lifesaving intravenous drug, you do not just care about the rate of clearance at *this exact millisecond*. You need to know exactly how much of the drug will still be in the patient's bloodstream 6 hours from now. 
+
+To predict concentrations over macroscopic periods of time, we must take our instantaneous differential rate laws and integrate them using calculus.
+
+:::{include} sec_1_first_order.md
+:::
+:::{include} sec_2_second_order.md
+:::
+:::{include} sec_3_zero_order.md
+:::
 :::{code-cell}
 :tags: ["remove-input"]
 
@@ -62,7 +73,6 @@ questions.add_question(
 display(HTML(questions.render()))
 #**Conceptual Question:** Given the possible quantum numbers is it possible to have zero vibrational energy in a quantum HO? Please justify and explain your answer. 
 :::
-## Applications 
 :::{code-cell} python
 :tags: ["remove-input"]
 
