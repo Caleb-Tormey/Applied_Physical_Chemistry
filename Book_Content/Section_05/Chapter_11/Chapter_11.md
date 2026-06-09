@@ -33,9 +33,14 @@ except Exception as e:
 :::
 # Chapter 11: Introduction to Reaction Rates
 
-## Factors Affecting Reaction Rates
-
-## Rate Laws and Reaction Order
+:::{include} sec_1_illusion_thermo.md
+:::
+:::{include} sec_2_rate_laws.md
+:::
+:::{include} sec_3_collision_theory.md
+:::
+:::{include} sec_4_activation_energy.md
+:::
 :::{code-cell}
 :tags: ["remove-input"]
 
@@ -64,9 +69,7 @@ questions.add_question(
 display(HTML(questions.render()))
 #**Conceptual Question:** Given the possible quantum numbers is it possible to have zero vibrational energy in a quantum HO? Please justify and explain your answer. 
 :::
-## Method of Initial Rates
 
-## Relaxation Method
 :::{code-cell} python
 :tags: ["remove-input"]
 
