@@ -33,7 +33,21 @@ except Exception as e:
 :::
 # Chapter 13: Enzyme Kinetics
 
-## Michaelis-Menten Kinetics
+In the previous chapters, we looked at how molecules randomly crash into each other to overcome activation energy barriers. But biological systems cannot rely on random chance. They use **enzymes**—highly specialized protein catalysts—to physically grab substrates, orient them perfectly, and stretch their bonds. 
+
+Enzyme kinetics is the mathematical study of how fast these machines work, how strongly they bind their targets, and how drugs shut them down.
+
+---
+:::{include} sec_1_physical_model.md
+:::
+:::{include} sec_2_michaelis_menten.md
+:::
+:::{include} sec_3_constants.md
+:::
+:::{include} sec_4_linear_data.md
+:::
+:::{include} sec_5_inhibition.md
+:::
 :::{code-cell}
 :tags: ["remove-input"]
 
@@ -62,9 +76,7 @@ questions.add_question(
 display(HTML(questions.render()))
 #**Conceptual Question:** Given the possible quantum numbers is it possible to have zero vibrational energy in a quantum HO? Please justify and explain your answer. 
 :::
-## Lineweaver-Burk Plots and Enzyme Inhibition
 
-## Enzyme Activity
 :::{code-cell} python
 :tags: ["remove-input"]
 
