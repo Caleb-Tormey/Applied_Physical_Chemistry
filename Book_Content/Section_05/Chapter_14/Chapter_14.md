@@ -33,9 +33,20 @@ except Exception as e:
 :::
 # Chapter 14: Reaction Mechanisms and Catalysis
 
-## Elementary Reactions and Molecularity 
+In Chapter 13, we treated the enzyme like a black box. We knew that the substrate went in, the product came out, and the mathematical speed limit of the process could be mapped using the Michaelis-Menten equation. But what is physically happening inside that box? 
 
-## Steady State Approximation
+To truly understand chemistry and biology, we have to look past the macroscopic rate laws and zoom into the microscopic, step-by-step molecular dance that occurs as bonds break and form. This is the study of **reaction mechanisms**.
+
+---
+:::{include} sec_1_elementary.md
+:::
+:::{include} sec_2_approx.md
+:::
+:::{include} sec_3_transition_state.md
+:::
+:::{include} sec_4_bio_applications.md
+:::    
+
 :::{code-cell}
 :tags: ["remove-input"]
 
@@ -64,9 +75,7 @@ questions.add_question(
 display(HTML(questions.render()))
 #**Conceptual Question:** Given the possible quantum numbers is it possible to have zero vibrational energy in a quantum HO? Please justify and explain your answer. 
 :::
-## Transition State Theory
 
-## Biological Applications
 :::{code-cell} python
 :tags: ["remove-input"]
 
